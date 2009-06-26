@@ -19,7 +19,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.2.95
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 2
 Group: Graphical desktop/KDE
 License: GPL
@@ -72,7 +72,6 @@ Runtime files needed for pim based applications
 Summary: KDE PIM storage framework
 Group: Graphical desktop/KDE
 URL: http://pim.kde.org/akonadi/
-Requires: %name-core = %epoch:%version
 Requires: mysql
 Obsoletes: %name-akonadi < 1:3.93.0-1
 Obsoletes: kde4-akonadi < 2:4.0.68
