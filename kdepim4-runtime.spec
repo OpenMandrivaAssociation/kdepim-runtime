@@ -205,27 +205,11 @@ KDE 4 library.
 
 #-----------------------------------------------------------------------------
 
-%define libmbox %mklibname mbox 4
-
-%package -n %libmbox
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libmbox
-KDE 4 library.
-
-%files -n %libmbox
-%defattr(-,root,root)
-%_kde_libdir/libmbox.so.*
-
-#-----------------------------------------------------------------------------
-
 %package   devel
 Summary:   Devel stuff for %name
 Group:     Development/KDE and Qt
 Conflicts: kdepim4-devel < 2:4.2.95
 Requires:  %libakonadi_kcal = %epoch:%version
-Requires:  %libmbox = %epoch:%version
 Requires:  %libkdepim_copy = %epoch:%version
 Requires:  %libmaildir = %epoch:%version
 Requires:  %libakonadi_next = %epoch:%version
@@ -245,7 +229,6 @@ based on kdepim.
 %_kde_libdir/libakonadi_next.so
 %_kde_libdir/libkdepim-copy.so
 %_kde_libdir/libmaildir.so
-%_kde_libdir/libmbox.so
 %_kde_datadir/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 
 #-----------------------------------------------------------------------------
