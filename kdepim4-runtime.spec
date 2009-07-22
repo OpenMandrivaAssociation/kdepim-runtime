@@ -37,7 +37,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 #-----------------------------------------------------------------------------
 
 %define akonadi_kabccommon_major 4
-%define libakonadi_kabccommon %mklibname akonadi_kabccommon %{akonadi_kabccommon_major}
+%define libakonadi_kabccommon %mklibname akonadi-kabccommon %{akonadi_kabccommon_major}
 
 %package -n %libakonadi_kabccommon
 Summary: KDE 4 library
@@ -54,7 +54,7 @@ KDE 4 library.
 #-----------------------------------------------------------------------------
 
 %define akonadi_kcal_major 4
-%define libakonadi_kcal %mklibname akonadi_kcal %{akonadi_kcal_major}
+%define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
 
 %package -n %libakonadi_kcal
 Summary: KDE 4 library
@@ -71,7 +71,7 @@ KDE 4 library.
 #-----------------------------------------------------------------------------
 
 %define akonadi_xml_major 4
-%define libakonadi_xml %mklibname akonadi_xml %{akonadi_xml_major}
+%define libakonadi_xml %mklibname akonadi-xml %{akonadi_xml_major}
 
 %package -n %libakonadi_xml
 Summary: KDE 4 library
@@ -87,7 +87,7 @@ KDE 4 library.
 
 #-----------------------------------------------------------------------------
 
-%define libakonadi_next %mklibname akonadi_next 4
+%define libakonadi_next %mklibname akonadi-next 4
 
 %package -n %libakonadi_next
 Summary: KDE 4 library
@@ -103,7 +103,7 @@ KDE 4 library.
 
 #-----------------------------------------------------------------------------
 
-%define libkdepim_copy %mklibname kdepim_copy 4
+%define libkdepim_copy %mklibname kdepim-copy 4
 
 %package -n %libkdepim_copy
 Summary: KDE 4 library
