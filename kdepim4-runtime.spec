@@ -2,15 +2,15 @@ Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.2.98
 Release: %mkrel 1
-Epoch: 2
 Group: Graphical desktop/KDE
 License: GPL
 URL: http://pim.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
+BuildRequires: kdelibs4-experimental-devel >= 4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
-BuildRequires: automoc
+BuildRequires: automoc4
 BuildRequires: boost-devel
 BuildRequires: akonadi-devel
 BuildRequires: libxml2-devel
@@ -21,19 +21,143 @@ BuildRequires: strigi-devel
 Information Management applications for the K Desktop Environment runtime libs.
 
 %files
+%defattr(-,root,root,-)
+%_kde_bindir/*
+%_kde_appsdir/akonadi
+%_kde_appsdir/akonadiconsole
+%_kde_appsdir/akonadi_knut_resource
+%_kde_applicationsdir/*
+%_kde_datadir/akonadi
+%_kde_services/*
+%_kde_datadir/mime/packages/*
+%_kde_libdir/kde4/*
+%_kde_iconsdir/*/*/*/*
+%_kde_configdir/*
+
+#-----------------------------------------------------------------------------
+
+%define akonadi_kabccommon_major 4
+%define libakonadi_kabccommon %mklibname akonadi_kabccommon %{akonadi_kabccommon_major}
+
+%package -n %libakonadi_kabccommon
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libakonadi_kabccommon
+KDE 4 library.
+
+%files -n %libakonadi_kabccommon
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kabccommon.so.*
+
+#-----------------------------------------------------------------------------
+
+%define akonadi_kcal_major 4
+%define libakonadi_kcal %mklibname akonadi_kcal %{akonadi_kcal_major}
+
+%package -n %libakonadi_kcal
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libakonadi_kcal
+KDE 4 library.
+
+%files -n %libakonadi_kcal
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-kcal.so.*
+
+#-----------------------------------------------------------------------------
+
+%define akonadi_xml_major 4
+%define libakonadi_xml %mklibname akonadi_xml %{akonadi_xml_major}
+
+%package -n %libakonadi_xml
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libakonadi_xml
+KDE 4 library.
+
+%files -n %libakonadi_xml
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-xml.so.*
+
+#-----------------------------------------------------------------------------
+
+%define libakonadi_next %mklibname akonadi_next 4
+
+%package -n %libakonadi_next
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libakonadi_next
+KDE 4 library.
+
+%files -n %libakonadi_next
+%defattr(-,root,root)
+%_kde_libdir/libakonadi_next.so.*
+
+#-----------------------------------------------------------------------------
+
+%define libkdepim_copy %mklibname kdepim_copy 4
+
+%package -n %libkdepim_copy
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libkdepim_copy
+KDE 4 library.
+
+%files -n %libkdepim_copy
+%defattr(-,root,root)
+%_kde_libdir/libkdepim-copy.so.*
+
+#-----------------------------------------------------------------------------
+
+%define libmaildir %mklibname maildir 4
+
+%package -n %libmaildir
+Summary: KDE 4 library
+Group: System/Libraries
+Requires: kdepim4-runtime = %{version}
+
+%description -n %libmaildir
+KDE 4 library.
+
+%files -n %libmaildir
+%defattr(-,root,root)
+%_kde_libdir/libmaildir.so.*
 
 #----------------------------------------------------------------------
 
-%package core
-Summary: Core files for %name
-Group: Graphical desktop/KDE	
+%package devel
+Summary: Devel stuff for %name
+Group: Development/KDE and Qt
+Requires: kde4-macros
+Requires: kdelibs4-devel >= 2:4.2.98
+Requires: kdelibs4-experimental-devel >= 4.2.98
+Requires: kdepimlibs4-devel >= 4.2.96
+Requires: %{libakonadi_kcal}
+Requires: %{libakonadi_xml}
+Requires: %{libakonadi_kabccommon}
+Requires: %{libakonadi_next}
+Requires: %{libkdepim_copy}
+Requires: %{libmaildir}
 
-%description core
-Core files for %name.
+%description  devel
+This package contains header files needed if you wish to build applications
+based on kdepim-runtime.
 
-%files core
-%defattr(-,root,root,-)
-
+%files devel
+%defattr(-,root,root)
+%_kde_libdir/*.so
+%_kde_prefix/include/*
+%_kde_datadir/dbus-1/interfaces/*
 
 #----------------------------------------------------------------------
 
