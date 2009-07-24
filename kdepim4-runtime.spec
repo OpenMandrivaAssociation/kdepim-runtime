@@ -4,11 +4,12 @@ Version: 4.2.98
 Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
+Epoch: 2
 URL: http://pim.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
-BuildRequires: kdelibs4-experimental-devel >= 4.2.98
+BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
 BuildRequires: automoc4
 BuildRequires: boost-devel
@@ -42,7 +43,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %package -n %libakonadi_kabccommon
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_kabccommon
 KDE 4 library.
@@ -59,7 +60,7 @@ KDE 4 library.
 %package -n %libakonadi_kcal
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_kcal
 KDE 4 library.
@@ -76,7 +77,7 @@ KDE 4 library.
 %package -n %libakonadi_xml
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_xml
 KDE 4 library.
@@ -92,7 +93,7 @@ KDE 4 library.
 %package -n %libakonadi_next
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_next
 KDE 4 library.
@@ -108,7 +109,7 @@ KDE 4 library.
 %package -n %libkdepim_copy
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libkdepim_copy
 KDE 4 library.
@@ -124,7 +125,7 @@ KDE 4 library.
 %package -n %libmaildir
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{version}
+Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libmaildir
 KDE 4 library.
@@ -140,7 +141,7 @@ Summary: Devel stuff for %name
 Group: Development/KDE and Qt
 Requires: kde4-macros
 Requires: kdelibs4-devel >= 2:4.2.98
-Requires: kdelibs4-experimental-devel >= 4.2.98
+Requires: kdelibs4-experimental-devel >= 2:4.2.98
 Requires: kdepimlibs4-devel >= 4.2.96
 Requires: %{libakonadi_kcal}
 Requires: %{libakonadi_xml}
