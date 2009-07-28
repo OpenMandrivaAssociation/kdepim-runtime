@@ -1,7 +1,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.2.98
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -94,6 +94,7 @@ KDE 4 library.
 Summary: KDE 4 library
 Group: System/Libraries
 Requires: kdepim4-runtime = %{epoch}:%{version}
+Obsoletes: %{mklibname akonadi_next 4}
 
 %description -n %libakonadi_next
 KDE 4 library.
