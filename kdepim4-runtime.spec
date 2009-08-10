@@ -17,6 +17,7 @@ BuildRequires: akonadi-devel
 BuildRequires: libxml2-devel
 BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
+BuildRequires: qt4-qtdbus
 Obsoletes:     kdepim4-akonadi < 2:4.3.0
 Conflicts:     kdepim4-kresources < 2:4.3.0-1
 
