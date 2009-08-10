@@ -1,7 +1,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.3.0
-Release: %mkrel 3
+Release: %mkrel 4
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -17,7 +17,8 @@ BuildRequires: akonadi-devel
 BuildRequires: libxml2-devel
 BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
-Obsoletes: kdepim4-akonadi < 2:4.3.0
+Obsoletes:     kdepim4-akonadi < 2:4.3.0
+Conflicts:     kdepim4-kresources < 2:4.3.0-1
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
