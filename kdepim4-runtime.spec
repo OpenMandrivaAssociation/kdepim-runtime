@@ -1,12 +1,13 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.3.1
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
 URL: http://pim.kde.org
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
+Patch100: kdepim-runtime-bug205742-rev1019460-filename.patch
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
@@ -19,13 +20,25 @@ BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
 BuildRequires: qt4-qtdbus
 BuildRequires: akonadi
-Obsoletes:     kdepim4-akonadi < 2:4.3.0
-Conflicts:     kdepim4-kresources < 2:4.3.0-1
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
 
-%files
+#-----------------------------------------------------------------------------
+
+%package -n akonadi-kde
+Group: Graphical desktop/KDE
+Summary: Akonadi control center for KDE
+Obsoletes: kdepim4-runtime < 2:4.3.1-2
+Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
+Obsoletes: kdepim4-akonadi < 2:4.3.0
+Conflicts: kdepim4-kresources < 2:4.3.0-1
+Requires: akonadi >= 1:1.2.1
+
+%description -n akonadi-kde
+Akonadi control center for KDE.
+
+%files -n akonadi-kde
 %defattr(-,root,root,-)
 %_kde_bindir/*
 %_kde_appsdir/akonadi
@@ -47,7 +60,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %package -n %libakonadi_kabccommon
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_kabccommon
 KDE 4 library.
@@ -64,7 +76,6 @@ KDE 4 library.
 %package -n %libakonadi_kcal
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_kcal
 KDE 4 library.
@@ -81,7 +92,6 @@ KDE 4 library.
 %package -n %libakonadi_xml
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libakonadi_xml
 KDE 4 library.
@@ -97,7 +107,6 @@ KDE 4 library.
 %package -n %libakonadi_next
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 Obsoletes: %{mklibname akonadi_next 4}
 
 %description -n %libakonadi_next
@@ -114,7 +123,6 @@ KDE 4 library.
 %package -n %libkdepim_copy
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libkdepim_copy
 KDE 4 library.
@@ -130,7 +138,6 @@ KDE 4 library.
 %package -n %libmaildir
 Summary: KDE 4 library
 Group: System/Libraries
-Requires: kdepim4-runtime = %{epoch}:%{version}
 
 %description -n %libmaildir
 KDE 4 library.
@@ -169,6 +176,7 @@ based on kdepim-runtime.
 
 %prep
 %setup -q -n kdepim-runtime-%version
+%patch100 -p0 -b .orig
 
 %build
 %cmake_kde4
