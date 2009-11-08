@@ -1,16 +1,16 @@
+%define kde_snapshot svn1040395
+
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.3.2
+Version: 4.3.73
 Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
 URL: http://pim.kde.org
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
-Patch100: kdepim-runtime-bug205742-rev1019460-filename.patch
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
-BuildRequires: kdelibs4-experimental-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
 BuildRequires: automoc4
 BuildRequires: boost-devel
@@ -51,23 +51,7 @@ Akonadi control center for KDE.
 %_kde_libdir/kde4/*
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
-
-#-----------------------------------------------------------------------------
-
-%define akonadi_kabccommon_major 4
-%define libakonadi_kabccommon %mklibname akonadi-kabccommon %{akonadi_kabccommon_major}
-
-%package -n %libakonadi_kabccommon
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libakonadi_kabccommon
-KDE 4 library.
-
-%files -n %libakonadi_kabccommon
-%defattr(-,root,root)
-%_kde_libdir/libakonadi-kabccommon.so.*
-
+%_kde_datadir/autostart/kaddressbookmigrator.desktop
 #-----------------------------------------------------------------------------
 
 %define akonadi_kcal_major 4
@@ -146,6 +130,21 @@ KDE 4 library.
 %defattr(-,root,root)
 %_kde_libdir/libmaildir.so.*
 
+#-----------------------------------------------------------------------------
+
+%define libmbox %mklibname mbox 4
+
+%package -n %libmbox
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libmbox
+KDE 4 library.
+
+%files -n %libmbox
+%defattr(-,root,root)
+%_kde_libdir/libmbox.so.*
+
 #----------------------------------------------------------------------
 
 %package devel
@@ -153,11 +152,9 @@ Summary: Devel stuff for %name
 Group: Development/KDE and Qt
 Requires: kde4-macros
 Requires: kdelibs4-devel >= 2:4.2.98
-Requires: kdelibs4-experimental-devel >= 2:4.2.98
 Requires: kdepimlibs4-devel >= 4.2.96
 Requires: %{libakonadi_kcal}
 Requires: %{libakonadi_xml}
-Requires: %{libakonadi_kabccommon}
 Requires: %{libakonadi_next}
 Requires: %{libkdepim_copy}
 Requires: %{libmaildir}
@@ -169,14 +166,12 @@ based on kdepim-runtime.
 %files devel
 %defattr(-,root,root)
 %_kde_libdir/*.so
-%_kde_prefix/include/*
 %_kde_datadir/dbus-1/interfaces/*
 
 #----------------------------------------------------------------------
 
 %prep
-%setup -q -n kdepim-runtime-%version
-%patch100 -p0 -b .orig
+%setup -q -n kdepim-runtime-%version%kde_snapshot
 
 %build
 %cmake_kde4
