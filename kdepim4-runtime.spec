@@ -1,9 +1,9 @@
-%define kde_snapshot svn1040395
+%define kde_snapshot svn1048496
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.3.73
-Release: %mkrel 2
+Version: 4.3.75
+Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
