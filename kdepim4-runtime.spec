@@ -30,6 +30,7 @@ BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
 BuildRequires: qt4-qtdbus
 BuildRequires: akonadi
+BuildRequires: shared-desktop-ontologies-devel
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
