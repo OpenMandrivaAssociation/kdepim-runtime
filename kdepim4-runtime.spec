@@ -19,6 +19,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version%kd
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 %endif
+Patch0:        kdepim-runtime-4.3.85-fix-build.patch
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
@@ -53,7 +54,7 @@ Akonadi control center for KDE.
 %defattr(-,root,root,-)
 %_kde_bindir/*
 %_kde_appsdir/akonadi
-%_kde_appsdir/akonadiconsole
+#%_kde_appsdir/akonadiconsole
 %_kde_appsdir/akonadi_knut_resource
 %_kde_applicationsdir/*
 %_kde_datadir/akonadi
@@ -63,22 +64,6 @@ Akonadi control center for KDE.
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
-#-----------------------------------------------------------------------------
-
-%define akonadi_kcal_major 4
-%define libakonadi_kcal %mklibname akonadi-kcal %{akonadi_kcal_major}
-
-%package -n %libakonadi_kcal
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libakonadi_kcal
-KDE 4 library.
-
-%files -n %libakonadi_kcal
-%defattr(-,root,root)
-%_kde_libdir/libakonadi-kcal.so.*
-
 #-----------------------------------------------------------------------------
 
 %define akonadi_xml_major 4
@@ -94,22 +79,6 @@ KDE 4 library.
 %files -n %libakonadi_xml
 %defattr(-,root,root)
 %_kde_libdir/libakonadi-xml.so.*
-
-#-----------------------------------------------------------------------------
-
-%define libakonadi_next %mklibname akonadi-next 4
-
-%package -n %libakonadi_next
-Summary: KDE 4 library
-Group: System/Libraries
-Obsoletes: %{mklibname akonadi_next 4}
-
-%description -n %libakonadi_next
-KDE 4 library.
-
-%files -n %libakonadi_next
-%defattr(-,root,root)
-%_kde_libdir/libakonadi_next.so.*
 
 #-----------------------------------------------------------------------------
 
@@ -164,11 +133,10 @@ Group: Development/KDE and Qt
 Requires: kde4-macros
 Requires: kdelibs4-devel >= 2:4.2.98
 Requires: kdepimlibs4-devel >= 4.2.96
-Requires: %{libakonadi_kcal}
 Requires: %{libakonadi_xml}
-Requires: %{libakonadi_next}
 Requires: %{libkdepim_copy}
 Requires: %{libmaildir}
+Requires: %{libmbox}
 
 %description  devel
 This package contains header files needed if you wish to build applications
@@ -187,6 +155,7 @@ based on kdepim-runtime.
 %else
 %setup -q -n kdepim-runtime-%version
 %endif
+%patch0 -p0
 
 %build
 %cmake_kde4
