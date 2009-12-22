@@ -54,7 +54,6 @@ Akonadi control center for KDE.
 %defattr(-,root,root,-)
 %_kde_bindir/*
 %_kde_appsdir/akonadi
-#%_kde_appsdir/akonadiconsole
 %_kde_appsdir/akonadi_knut_resource
 %_kde_applicationsdir/*
 %_kde_datadir/akonadi
@@ -78,11 +77,12 @@ KDE 4 library.
 
 %files -n %libakonadi_xml
 %defattr(-,root,root)
-%_kde_libdir/libakonadi-xml.so.*
+%_kde_libdir/libakonadi-xml.so.%{akonadi_xml_major}*
 
 #-----------------------------------------------------------------------------
 
-%define libkdepim_copy %mklibname kdepim-copy 4
+%define kdepim_copy_major 4
+%define libkdepim_copy %mklibname kdepim-copy %{kdepim_copy_major}
 
 %package -n %libkdepim_copy
 Summary: KDE 4 library
@@ -93,11 +93,12 @@ KDE 4 library.
 
 %files -n %libkdepim_copy
 %defattr(-,root,root)
-%_kde_libdir/libkdepim-copy.so.*
+%_kde_libdir/libkdepim-copy.so.%{kdepim_copy_major}*
 
 #-----------------------------------------------------------------------------
 
-%define libmaildir %mklibname maildir 4
+%define maildir_major 4
+%define libmaildir %mklibname maildir %{maildir_major}
 
 %package -n %libmaildir
 Summary: KDE 4 library
@@ -108,11 +109,12 @@ KDE 4 library.
 
 %files -n %libmaildir
 %defattr(-,root,root)
-%_kde_libdir/libmaildir.so.*
+%_kde_libdir/libmaildir.so.%{maildir_major}*
 
 #-----------------------------------------------------------------------------
 
-%define libmbox %mklibname mbox 4
+%define mbox_major 4
+%define libmbox %mklibname mbox %{mbox_major}
 
 %package -n %libmbox
 Summary: KDE 4 library
@@ -123,7 +125,7 @@ KDE 4 library.
 
 %files -n %libmbox
 %defattr(-,root,root)
-%_kde_libdir/libmbox.so.*
+%_kde_libdir/libmbox.so.%{mbox_major}*
 
 #----------------------------------------------------------------------
 
