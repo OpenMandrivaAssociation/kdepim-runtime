@@ -9,7 +9,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.3.90
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -135,12 +135,12 @@ Group: Development/KDE and Qt
 Requires: kde4-macros
 Requires: kdelibs4-devel >= 2:4.2.98
 Requires: kdepimlibs4-devel >= 4.2.96
-Requires: %{libakonadi_xml}
-Requires: %{libkdepim_copy}
-Requires: %{libmaildir}
-Requires: %{libmbox}
+Requires: %{libakonadi_xml} = %{epoch}:%{version}
+Requires: %{libkdepim_copy} = %{epoch}:%{version}
+Requires: %{libmaildir} = %{epoch}:%{version}
+Requires: %{libmbox} = %{epoch}:%{version}
 
-%description  devel
+%description devel
 This package contains header files needed if you wish to build applications
 based on kdepim-runtime.
 
