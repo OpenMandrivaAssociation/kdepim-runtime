@@ -8,7 +8,7 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.4.1
+Version: 4.4.2
 Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
