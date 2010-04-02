@@ -9,7 +9,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.4.2
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -160,8 +160,8 @@ based on kdepim-runtime.
 %setup -q -n kdepim-runtime-%version
 %endif
 %patch0 -p0
-#%patch200 -p0
-#%patch201 -p0
+%patch200 -p0
+%patch201 -p0
 
 %build
 %cmake_kde4
