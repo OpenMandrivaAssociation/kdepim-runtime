@@ -9,7 +9,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.4.2
-Release: %mkrel 2
+Release: %mkrel 3
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -22,6 +22,7 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.ta
 Patch0:        kdepim-runtime-4.3.85-fix-build.patch
 Patch200:  kdepim-4.4.1-t1108280-kres-fix-instance-creation.patch
 Patch201:  kdepim-4.4.1-t1108431-kres-do-not-start-akonadi.patch
+Patch300:  kdepim-runtime-4.4.2-review-3827-distributionlist.patch
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
@@ -162,6 +163,7 @@ based on kdepim-runtime.
 %patch0 -p0
 %patch200 -p0
 %patch201 -p0
+%patch300 -p2
 
 %build
 %cmake_kde4
