@@ -9,7 +9,7 @@
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.4.3
-Release: %mkrel 2
+Release: %mkrel 3
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -49,6 +49,7 @@ Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
 Obsoletes: kdepim4-akonadi < 2:4.3.0
 Conflicts: kdepim4-kresources < 2:4.3.0-1
 Requires: akonadi >= 1:1.2.1
+Requires: mysql-client
 
 %description -n akonadi-kde
 Akonadi control center for KDE.
@@ -66,6 +67,7 @@ Akonadi control center for KDE.
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
+
 #-----------------------------------------------------------------------------
 
 %define akonadi_xml_major 4
