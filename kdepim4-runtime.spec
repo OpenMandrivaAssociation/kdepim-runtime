@@ -8,8 +8,8 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.4.3
-Release: %mkrel 3
+Version: 4.4.5
+Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -20,7 +20,8 @@ Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version%kd
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 %endif
 Patch0:    kdepim-runtime-4.3.85-fix-build.patch
-Patch100:  kdepim-runtime-4.4.3-b1127306-fix-vcard-move.patch
+Patch100:  kdepim-runtime-4.4.5-r1156067.patch
+Patch101:  kdepim-runtime-4.4.5-r1156687.patch
 Patch200:  kdepim-4.4.1-t1108280-kres-fix-instance-creation.patch
 Patch201:  kdepim-4.4.1-t1108431-kres-do-not-start-akonadi.patch
 Buildroot:     %_tmppath/%name-%version-%release-root
@@ -162,8 +163,8 @@ based on kdepim-runtime.
 %else
 %setup -q -n kdepim-runtime-%version
 %endif
-#%patch0 -p0
-%patch100 -p2
+%patch100 -p5
+%patch101 -p5
 %patch200 -p0
 %patch201 -p0
 
