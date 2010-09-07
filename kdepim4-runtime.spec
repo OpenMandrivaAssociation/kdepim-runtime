@@ -128,6 +128,38 @@ KDE 4 library.
 %defattr(-,root,root)
 %_kde_libdir/libmbox.so.%{mbox_major}*
 
+#-----------------------------------------------------------------------------
+
+%define akonadi_filestore_major 4
+%define libakonadi_filestore %mklibname akonadi_filestore %{akonadi_filestore_major}
+
+%package -n %libakonadi_filestore
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libakonadi_filestore
+KDE 4 library.
+
+%files -n %libakonadi_filestore
+%defattr(-,root,root)
+%_kde_libdir/libakonadi-filestore.so.%{akonadi_filestore_major}*
+
+#-----------------------------------------------------------------------------
+
+%define kmindexreader_major 4
+%define libkmindexreader %mklibname kmindexreader %{kmindexreader_major}
+
+%package -n %libkmindexreader
+Summary: KDE 4 library
+Group: System/Libraries
+
+%description -n %libkmindexreader
+KDE 4 library.
+
+%files -n %libkmindexreader
+%defattr(-,root,root)
+%_kde_libdir/libkmindexreader.so.%{kmindexreader_major}*
+
 #----------------------------------------------------------------------
 
 %package devel
@@ -136,10 +168,12 @@ Group: Development/KDE and Qt
 Requires: kde4-macros
 Requires: kdelibs4-devel >= 2:4.2.98
 Requires: kdepimlibs4-devel >= 4.2.96
-Requires: %{libakonadi_xml} = %{epoch}:%{version}
-Requires: %{libkdepim_copy} = %{epoch}:%{version}
-Requires: %{libmaildir} = %{epoch}:%{version}
-Requires: %{libmbox} = %{epoch}:%{version}
+Requires: %{libakonadi_xml} = %{epoch}:%{version}-%release
+Requires: %{libkdepim_copy} = %{epoch}:%{version}-%release
+Requires: %{libmaildir} = %{epoch}:%{version}-%release
+Requires: %{libmbox} = %{epoch}:%{version}-%release
+Requires: %{libakonadi_filestore} = %{epoch}:%{version}-%release
+Requires: %libkmindexreader = %{epoch}:%{version}-%release
 
 %description devel
 This package contains header files needed if you wish to build applications
