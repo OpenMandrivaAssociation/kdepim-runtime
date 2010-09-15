@@ -1,28 +1,26 @@
 %define branch 1
 %{?_branch: %{expand: %%global branch 1}}
 
-
 %if %branch
-%define kde_snapshot svn1170578
+%define kde_snapshot svn1174542
 %endif
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.5.67
+Version: 4.5.68
 Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
 URL: http://pim.kde.org
 %if %branch
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 %endif
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.2.98
 BuildRequires: kdepimlibs4-devel >= 2:4.2.98
-BuildRequires: automoc4
 BuildRequires: boost-devel
 BuildRequires: akonadi-devel
 BuildRequires: libxml2-devel
@@ -195,7 +193,6 @@ based on kdepim-runtime.
 
 %build
 %cmake_kde4
-
 %make
 
 %install
