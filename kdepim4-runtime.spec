@@ -2,13 +2,17 @@
 %{?_branch: %{expand: %%global branch 1}}
 
 %if %branch
-%define kde_snapshot svn1174542
+%define kde_snapshot svn1183613
 %endif
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.5.68
+Version: 4.5.71
+%if %branch
+Release: %mkrel -c %kde_snapshot 1
+%else
 Release: %mkrel 1
+%endif
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
@@ -19,8 +23,8 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
 %endif
 Buildroot:     %_tmppath/%name-%version-%release-root
-BuildRequires: kdelibs4-devel >= 2:4.2.98
-BuildRequires: kdepimlibs4-devel >= 2:4.2.98
+BuildRequires: kdelibs4-devel >= 2:4.5.71
+BuildRequires: kdepimlibs4-devel >= 2:4.5.71
 BuildRequires: boost-devel
 BuildRequires: akonadi-devel
 BuildRequires: libxml2-devel
@@ -53,6 +57,7 @@ Akonadi control center for KDE.
 %_kde_bindir/*
 %_kde_appsdir/akonadi
 %_kde_appsdir/akonadi_knut_resource
+%_kde_appsdir/akonadi_maildispatcher_agent
 %_kde_applicationsdir/*
 %_kde_datadir/akonadi
 %_kde_services/*
@@ -112,22 +117,6 @@ KDE 4 library.
 
 #-----------------------------------------------------------------------------
 
-%define mbox_major 4
-%define libmbox %mklibname mbox %{mbox_major}
-
-%package -n %libmbox
-Summary: KDE 4 library
-Group: System/Libraries
-
-%description -n %libmbox
-KDE 4 library.
-
-%files -n %libmbox
-%defattr(-,root,root)
-%_kde_libdir/libmbox.so.%{mbox_major}*
-
-#-----------------------------------------------------------------------------
-
 %define akonadi_filestore_major 4
 %define libakonadi_filestore %mklibname akonadi_filestore %{akonadi_filestore_major}
 
@@ -163,15 +152,12 @@ KDE 4 library.
 %package devel
 Summary: Devel stuff for %name
 Group: Development/KDE and Qt
-Requires: kde4-macros
-Requires: kdelibs4-devel >= 2:4.2.98
-Requires: kdepimlibs4-devel >= 4.2.96
+Requires: kdepimlibs4-devel >= 4.5.71
 Requires: %{libakonadi_xml} = %{epoch}:%{version}-%release
 Requires: %{libkdepim_copy} = %{epoch}:%{version}-%release
 Requires: %{libmaildir} = %{epoch}:%{version}-%release
-Requires: %{libmbox} = %{epoch}:%{version}-%release
 Requires: %{libakonadi_filestore} = %{epoch}:%{version}-%release
-Requires: %libkmindexreader = %{epoch}:%{version}-%release
+Requires: %{libkmindexreader} = %{epoch}:%{version}-%release
 
 %description devel
 This package contains header files needed if you wish to build applications
