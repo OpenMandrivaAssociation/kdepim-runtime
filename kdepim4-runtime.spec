@@ -9,7 +9,7 @@ Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.5.77
 %if %branch
-Release: %mkrel -c %kde_snapshot 1
+Release: %mkrel -c %kde_snapshot 2
 %else
 Release: %mkrel 1
 %endif
@@ -46,7 +46,7 @@ Obsoletes: kdepim4-runtime < 2:4.3.1-2
 Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
 Obsoletes: kdepim4-akonadi < 2:4.3.0
 Conflicts: kdepim4-kresources < 2:4.3.0-1
-Requires: akonadi >= 1:1.2.1
+Requires: akonadi >= 1:1.4.54
 Requires: mysql-client
 
 %description -n akonadi-kde
