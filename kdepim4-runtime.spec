@@ -7,7 +7,7 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.5.80
+Version: 4.5.85
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
