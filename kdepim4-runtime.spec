@@ -7,7 +7,7 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.5.90
+Version: 4.5.93
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
@@ -20,13 +20,13 @@ URL: http://pim.kde.org
 %if %branch
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
 %else
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-4.6beta3.tar.bz2
 %endif
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.5.71
-BuildRequires: kdepimlibs4-devel >= 2:4.5.74
+BuildRequires: kdepimlibs4-devel >= 2:4.5.90
 BuildRequires: boost-devel
-BuildRequires: akonadi-devel
+BuildRequires: akonadi-devel >= 1:1.4.90
 BuildRequires: libxml2-devel
 BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
@@ -46,7 +46,7 @@ Obsoletes: kdepim4-runtime < 2:4.3.1-2
 Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
 Obsoletes: kdepim4-akonadi < 2:4.3.0
 Conflicts: kdepim4-kresources < 2:4.3.0-1
-Requires: akonadi >= 1:1.4.54
+Requires: akonadi >= 1:1.4.90
 Requires: mysql-client
 
 %description -n akonadi-kde
@@ -174,7 +174,7 @@ based on kdepim-runtime.
 %if %branch
 %setup -q -n kdepim-runtime-%version%kde_snapshot
 %else
-%setup -q -n kdepim-runtime-%version
+%setup -q -n kdepim-runtime-4.6beta3
 %endif
 
 %build
