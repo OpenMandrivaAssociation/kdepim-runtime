@@ -7,7 +7,7 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.5.93
+Version: 4.5.94
 %if %branch
 Release: %mkrel -c %kde_snapshot 1
 %else
@@ -20,13 +20,13 @@ URL: http://pim.kde.org
 %if %branch
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
 %else
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-4.6beta3.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%{version}.tar.bz2
 %endif
 Buildroot:     %_tmppath/%name-%version-%release-root
 BuildRequires: kdelibs4-devel >= 2:4.5.71
 BuildRequires: kdepimlibs4-devel >= 2:4.5.90
 BuildRequires: boost-devel
-BuildRequires: akonadi-devel >= 1:1.4.90
+BuildRequires: akonadi-devel >= 1:1.4.95
 BuildRequires: libxml2-devel
 BuildRequires: libxslt-devel
 BuildRequires: strigi-devel
@@ -46,13 +46,87 @@ Obsoletes: kdepim4-runtime < 2:4.3.1-2
 Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
 Obsoletes: kdepim4-akonadi < 2:4.3.0
 Conflicts: kdepim4-kresources < 2:4.3.0-1
-Requires: akonadi >= 1:1.4.90
+Conflicts: kdepim4-core < 2:4.5.94
+Conflicts: kde-l10n-af < 4.5.90
+Conflicts: kde-l10n-ar < 4.5.90
+Conflicts: kde-l10n-ast < 4.5.90
+Conflicts: kde-l10n-be < 4.5.90
+Conflicts: kde-l10n-bg < 4.5.90
+Conflicts: kde-l10n-bn < 4.5.90
+Conflicts: kde-l10n-br < 4.5.90
+Conflicts: kde-l10n-ca < 4.5.90
+Conflicts: kde-l10n-cs < 4.5.90
+Conflicts: kde-l10n-cy < 4.5.90
+Conflicts: kde-l10n-da < 4.5.90
+Conflicts: kde-l10n-de < 4.5.90
+Conflicts: kde-l10n-el < 4.5.90
+Conflicts: kde-l10n-en_GB < 4.5.90
+Conflicts: kde-l10n-eo < 4.5.90
+Conflicts: kde-l10n-es < 4.5.90
+Conflicts: kde-l10n-et < 4.5.90
+Conflicts: kde-l10n-eu < 4.5.90
+Conflicts: kde-l10n-fa < 4.5.90
+Conflicts: kde-l10n-fi < 4.5.90
+Conflicts: kde-l10n-fr < 4.5.90
+Conflicts: kde-l10n-fy < 4.5.90
+Conflicts: kde-l10n-ga < 4.5.90
+Conflicts: kde-l10n-gl < 4.5.90
+Conflicts: kde-l10n-he < 4.5.90
+Conflicts: kde-l10n-hi < 4.5.90
+Conflicts: kde-l10n-hne < 4.5.90
+Conflicts: kde-l10n-hr < 4.5.90
+Conflicts: kde-l10n-hsb < 4.5.90
+Conflicts: kde-l10n-hu < 4.5.90
+Conflicts: kde-l10n-ia < 4.5.90
+Conflicts: kde-l10n-is < 4.5.90
+Conflicts: kde-l10n-it < 4.5.90
+Conflicts: kde-l10n-ja < 4.5.90
+Conflicts: kde-l10n-ka < 4.5.90
+Conflicts: kde-l10n-kk < 4.5.90
+Conflicts: kde-l10n-km < 4.5.90
+Conflicts: kde-l10n-ko < 4.5.90
+Conflicts: kde-l10n-ku < 4.5.90
+Conflicts: kde-l10n-lt < 4.5.90
+Conflicts: kde-l10n-lv < 4.5.90
+Conflicts: kde-l10n-mai < 4.5.90
+Conflicts: kde-l10n-mk < 4.5.90
+Conflicts: kde-l10n-ms < 4.5.90
+Conflicts: kde-l10n-nb < 4.5.90
+Conflicts: kde-l10n-nds < 4.5.90
+Conflicts: kde-l10n-ne < 4.5.90
+Conflicts: kde-l10n-nl < 4.5.90
+Conflicts: kde-l10n-nn < 4.5.90
+Conflicts: kde-l10n-oc < 4.5.90
+Conflicts: kde-l10n-pa < 4.5.90
+Conflicts: kde-l10n-pl < 4.5.90
+Conflicts: kde-l10n-pt < 4.5.90
+Conflicts: kde-l10n-pt_BR < 4.5.90
+Conflicts: kde-l10n-ro < 4.5.90
+Conflicts: kde-l10n-ru < 4.5.90
+Conflicts: kde-l10n-se < 4.5.90
+Conflicts: kde-l10n-si < 4.5.90
+Conflicts: kde-l10n-sk < 4.5.90
+Conflicts: kde-l10n-sl < 4.5.90
+Conflicts: kde-l10n-sr < 4.5.90
+Conflicts: kde-l10n-sv < 4.5.90
+Conflicts: kde-l10n-ta < 4.5.90
+Conflicts: kde-l10n-tg < 4.5.90
+Conflicts: kde-l10n-th < 4.5.90
+Conflicts: kde-l10n-tr < 4.5.90
+Conflicts: kde-l10n-uk < 4.5.90
+Conflicts: kde-l10n-uz < 4.5.90
+Conflicts: kde-l10n-vi < 4.5.90
+Conflicts: kde-l10n-wa < 4.5.90
+Conflicts: kde-l10n-xh < 4.5.90
+Conflicts: kde-l10n-zh_CN < 4.5.90
+Conflicts: kde-l10n-zh_TW < 4.5.90
+Requires: akonadi >= 1:1.4.95
 Requires: mysql-client
 
 %description -n akonadi-kde
 Akonadi control center for KDE.
 
-%files -n akonadi-kde
+%files -n akonadi-kde -f %name.lang
 %defattr(-,root,root,-)
 %_kde_bindir/*
 %_kde_appsdir/akonadi
@@ -174,7 +248,7 @@ based on kdepim-runtime.
 %if %branch
 %setup -q -n kdepim-runtime-%version%kde_snapshot
 %else
-%setup -q -n kdepim-runtime-4.6beta3
+%setup -q -n kdepim-runtime-%version
 %endif
 
 %build
@@ -185,6 +259,8 @@ based on kdepim-runtime.
 rm -fr %buildroot
 
 %makeinstall_std -C build
+
+%find_lang %name --all-name --with-html
 
 %clean
 rm -fr %buildroot
