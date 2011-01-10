@@ -16,7 +16,7 @@ Release: %mkrel 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 2
-URL: http://pim.kde.org
+URL: http://community.kde.org/KDE_PIM
 %if %branch
 Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
 %else
