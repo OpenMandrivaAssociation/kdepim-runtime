@@ -11,7 +11,7 @@ Version: 4.6.0
 %if %branch
 Release: 0.%kde_snapshot.1
 %else
-Release: 1
+Release: 2
 %endif
 Group: Graphical desktop/KDE
 License: GPL
@@ -82,7 +82,7 @@ Conflicts: kde-l10n-kn < 4.6.3-2
 Conflicts: kde-l10n-ko < 4.6.3-2
 Conflicts: kde-l10n-ku < 4.3.2-4
 Conflicts: kde-l10n-lt < 4.6.3-2
-Conflicts: kde-l10n-lv < 4.6.3-2
+Conflicts: kde-l10n-lv < 4.6.3-3
 Conflicts: kde-l10n-mai < 4.6.3-2
 Conflicts: kde-l10n-mk < 4.4.95-7
 Conflicts: kde-l10n-ml < 4.5.95-6
@@ -97,7 +97,7 @@ Conflicts: kde-l10n-pl < 4.6.3-2
 Conflicts: kde-l10n-pt < 4.6.3-2
 Conflicts: kde-l10n-pt_BR < 4.6.3-2
 Conflicts: kde-l10n-ro < 4.6.3-2
-Conflicts: kde-l10n-ru < 4.6.3-2
+Conflicts: kde-l10n-ru < 4.6.3-3
 Conflicts: kde-l10n-se < 4.2.96-6
 Conflicts: kde-l10n-si < 4.4.95-7
 Conflicts: kde-l10n-sk < 4.6.3-2
