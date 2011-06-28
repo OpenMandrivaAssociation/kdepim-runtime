@@ -11,7 +11,7 @@ Version: 4.6.0
 %if %branch
 Release: 0.%kde_snapshot.1
 %else
-Release: 4
+Release: 5
 %endif
 Group: Graphical desktop/KDE
 License: GPL
@@ -22,6 +22,7 @@ Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%
 %else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%{version}.tar.bz2
 %endif
+Patch0:        kdepim-runtime-4.6.0-remove-po.patch
 BuildRequires: kdelibs4-devel >= 2:4.5.71
 BuildRequires: kdepimlibs4-devel >= 2:4.5.90
 BuildRequires: boost-devel
@@ -236,12 +237,10 @@ based on kdepim-runtime.
 %setup -q -n kdepim-runtime-%version
 %endif
 
+%patch0 -p0
+
 %build
-# We remove dupplicate .po files already in kde-l10n
-for i in akonadi_davgroupware_resource akonadi_imap_resource akonadi_invitations_agent akonadi_kabc_resource akonadi_kresourceassistant akonadi_maildir_resource  akonadi_maildispatcher_agent akonadi_pop3_resource  akonadi_singlefile_resource akonaditray  kcal_akonadi kcm_akonadi kmail-migrator ; 
-do
-	rm -f po/*/$i.po
-done
+rm -fr po
 
 %cmake_kde4
 %make
