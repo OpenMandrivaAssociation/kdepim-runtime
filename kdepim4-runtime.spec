@@ -1,27 +1,12 @@
-%define branch 0
-%{?_branch: %{expand: %%global branch 1}}
-
-%if %branch
-%define kde_snapshot svn1198704
-%endif
-
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.6.0
-%if %branch
-Release: 0.%kde_snapshot.1
-%else
-Release: 5
-%endif
+Version: 4.7.41
+Release: 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 3
 URL: http://community.kde.org/KDE_PIM
-%if %branch
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/kdepim-runtime-%version%kde_snapshot.tar.bz2
-%else
 Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%{version}.tar.bz2
-%endif
 Patch0:        kdepim-runtime-4.6.0-remove-po.patch
 BuildRequires: kdelibs4-devel >= 2:4.5.71
 BuildRequires: kdepimlibs4-devel >= 2:4.5.90
@@ -231,13 +216,7 @@ based on kdepim-runtime.
 #----------------------------------------------------------------------
 
 %prep
-%if %branch
-%setup -q -n kdepim-runtime-%version%kde_snapshot
-%else
 %setup -q -n kdepim-runtime-%version
-%endif
-
-%patch0 -p0
 
 %build
 rm -fr po
