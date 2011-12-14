@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Name: kdepim4-runtime
 Summary: K Desktop Environment
 Version: 4.7.90
