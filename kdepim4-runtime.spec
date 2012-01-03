@@ -106,7 +106,7 @@ Requires: mysql-client
 %description -n akonadi-kde
 Akonadi control center for KDE.
 
-%files -n akonadi-kde -f %name.lang
+%files -n akonadi-kde
 %_kde_bindir/*
 %_kde_appsdir/akonadi
 %_kde_appsdir/akonadi_knut_resource
