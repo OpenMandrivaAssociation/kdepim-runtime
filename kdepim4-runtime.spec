@@ -120,6 +120,8 @@ Akonadi control center for KDE.
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
 %_kde_servicetypes/davgroupwareprovider.desktop
+%_kde_servicetypes/*.desktop
+%_kde_datadir/ontology/kde/aneo.*
 
 #-----------------------------------------------------------------------------
 
@@ -230,5 +232,5 @@ rm -fr po
 %install
 %makeinstall_std -C build
 
-
-
+# Remove non packaged files
+rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
