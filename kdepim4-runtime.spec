@@ -230,6 +230,5 @@ rm -fr po
 %install
 %makeinstall_std -C build
 
-%find_lang %name --all-name --with-html
 
 
