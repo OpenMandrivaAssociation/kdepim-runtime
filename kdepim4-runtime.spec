@@ -33,6 +33,7 @@ Obsoletes: kdepim4-runtime < 2:4.3.1-2
 Provides: kdepim4-runtime = %{epoch}:%{version}-%{release}
 Obsoletes: kdepim4-akonadi < 2:4.3.0
 Conflicts: kdepim4-kresources < 2:4.3.0-1
+Conflicts: kdepim4-runtime-devel < 2:4.7.97
 Conflicts: kdepim4-core < 2:4.5.94
 Conflicts: kde-l10n-ar < 4.6.3-2
 Conflicts: kde-l10n-bg < 4.6.3-2
@@ -116,12 +117,14 @@ Akonadi control center for KDE.
 %_kde_services/*
 %_kde_datadir/mime/packages/*
 %_kde_libdir/kde4/*
+%_kde_libdir/libnepomukdatamanagement-copy.so
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
 %_kde_servicetypes/davgroupwareprovider.desktop
 %_kde_servicetypes/*.desktop
 %_kde_datadir/ontology/kde/aneo.*
+%_kde_datadir/dbus-1/interfaces/*
 
 #-----------------------------------------------------------------------------
 
@@ -215,8 +218,11 @@ This package contains header files needed if you wish to build applications
 based on kdepim-runtime.
 
 %files devel
-%_kde_libdir/*.so
-%_kde_datadir/dbus-1/interfaces/*
+%_kde_libdir/libakonadi-filestore.so                                                                                                                         
+%_kde_libdir/libakonadi-xml.so
+%_kde_libdir/libkdepim-copy.so
+%_kde_libdir/libkmindexreader.so
+%_kde_libdir/libmaildir.so
 
 #----------------------------------------------------------------------
 
