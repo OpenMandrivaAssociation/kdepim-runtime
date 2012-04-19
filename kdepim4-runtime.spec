@@ -2,13 +2,13 @@
 
 Name: kdepim4-runtime
 Summary: K Desktop Environment
-Version: 4.8.1
+Version: 4.8.2
 Release: 1
 Group: Graphical desktop/KDE
 License: GPL
 Epoch: 3
 URL: http://community.kde.org/KDE_PIM
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%{version}.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/kdepim-runtime-%{version}.tar.xz
 Patch0:        kdepim-runtime-4.6.0-remove-po.patch
 BuildRequires: kdelibs4-devel >= 2:4.5.71
 BuildRequires: kdepimlibs4-devel >= 2:4.5.90
