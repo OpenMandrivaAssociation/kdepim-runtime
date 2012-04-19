@@ -121,7 +121,6 @@ Akonadi control center for KDE.
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
-%_kde_servicetypes/davgroupwareprovider.desktop
 %_kde_servicetypes/*.desktop
 %_kde_datadir/ontology/kde/aneo.*
 %_kde_datadir/dbus-1/interfaces/*
