@@ -117,7 +117,6 @@ Akonadi control center for KDE.
 %_kde_services/*
 %_kde_datadir/mime/packages/*
 %_kde_libdir/kde4/*
-%_kde_libdir/libnepomukdatamanagement-copy.so
 %_kde_iconsdir/*/*/*/*
 %_kde_configdir/*
 %_kde_datadir/autostart/kaddressbookmigrator.desktop
