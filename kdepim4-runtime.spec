@@ -221,6 +221,7 @@ based on kdepim-runtime.
 %_kde_libdir/libkdepim-copy.so
 %_kde_libdir/libkmindexreader.so
 %_kde_libdir/libmaildir.so
+%_kde_libdir/libkdepim-runtime-dms-copy.so
 
 #----------------------------------------------------------------------
 
