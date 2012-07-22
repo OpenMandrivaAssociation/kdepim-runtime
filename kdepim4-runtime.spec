@@ -2,24 +2,26 @@
 
 Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version: 4.8.97
-Release: 1
+Version:	4.8.97
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPL
 Epoch:		3
 URL:		http://community.kde.org/KDE_PIM
 Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/kdepim-runtime-%{version}.tar.xz
-Patch0:		kdepim-runtime-4.6.0-remove-po.patch
-BuildRequires:	kdelibs4-devel >= 2:4.5.71
-BuildRequires:	kdepimlibs4-devel >= 2:4.5.90
+Patch10:	kdepim-runtime-4.8.1-noakonaditray.patch
+Patch11:	kdepim-runtime-4.8.97-l10n-ru.patch
 BuildRequires:	boost-devel
-BuildRequires:	akonadi-devel >= 1:1.4.95
-BuildRequires:	libxml2-devel
-BuildRequires:	libxslt-devel
-BuildRequires:	strigi-devel
+BuildRequires:	kdelibs4-devel
+BuildRequires:	kdepimlibs4-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
-BuildRequires:	shared-desktop-ontologies-devel
+BuildRequires:	pkgconfig(akonadi)
+BuildRequires:	pkgconfig(libkgapi)
+BuildRequires:	pkgconfig(libstreams)
+BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxslt)
+BuildRequires:	pkgconfig(shared-desktop-ontologies)
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
@@ -29,10 +31,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %package -n akonadi-kde
 Group:		Graphical desktop/KDE
 Summary:	Akonadi control center for KDE
-Obsoletes:	kdepim4-runtime < 2:4.3.1-2
 Provides:	kdepim4-runtime = %{EVRD}
-Obsoletes:	kdepim4-akonadi < 2:4.3.0
-Conflicts:	kdepim4-kresources < 2:4.3.0-1
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	kdepim4-core < 2:4.5.94
 Conflicts:	kde-l10n-ar < 4.6.3-2
@@ -101,7 +100,7 @@ Conflicts:	kde-l10n-uk < 4.6.3-2
 Conflicts:	kde-l10n-wa < 4.6.3-2
 Conflicts:	kde-l10n-zh_CN < 4.6.3-2
 Conflicts:	kde-l10n-zh_TW < 4.6.3-2
-Requires:	akonadi >= 1:1.4.95
+Requires:	akonadi
 Requires:	mysql-client
 
 %description -n akonadi-kde
@@ -120,7 +119,8 @@ Akonadi control center for KDE.
 %{_kde_libdir}/libkdepim-runtime-dms-copy.so
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_configdir}/*
-%{_kde_datadir}/autostart/kaddressbookmigrator.desktop
+%{_kde_autostart}/kaddressbookmigrator.desktop
+%{_kde_servicetypes}/davgroupwareprovider.desktop
 %{_kde_servicetypes}/*.desktop
 %{_kde_datadir}/ontology/kde/aneo.*
 %{_kde_datadir}/dbus-1/interfaces/*
@@ -227,9 +227,12 @@ based on kdepim-runtime.
 
 %prep
 %setup -q -n kdepim-runtime-%{version}
+%patch10 -p1
+%patch11 -p1
 
 %build
 rm -fr po
+
 %cmake_kde4
 %make
 
@@ -238,3 +241,4 @@ rm -fr po
 
 # Remove non packaged files
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
+
