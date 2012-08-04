@@ -8,7 +8,7 @@ Group:		Graphical desktop/KDE
 License:	GPL
 Epoch:		3
 URL:		http://community.kde.org/KDE_PIM
-Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/kdepim-runtime-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdepim-runtime-%{version}.tar.xz
 Patch10:	kdepim-runtime-4.8.1-noakonaditray.patch
 Patch11:	kdepim-runtime-4.8.97-l10n-ru.patch
 BuildRequires:	boost-devel
