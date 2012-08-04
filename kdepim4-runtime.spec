@@ -2,8 +2,8 @@
 
 Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version:	4.8.97
-Release:	2
+Version: 4.9.0
+Release: 1
 Group:		Graphical desktop/KDE
 License:	GPL
 Epoch:		3
