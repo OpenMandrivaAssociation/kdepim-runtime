@@ -227,7 +227,7 @@ based on kdepim-runtime.
 %prep
 %setup -q -n kdepim-runtime-%{version}
 %patch10 -p1
-%patch11 -p1
+#%patch11 -p1
 
 %build
 rm -fr po
