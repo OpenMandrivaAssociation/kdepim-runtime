@@ -1,0 +1,396 @@
+diff -urN kdepim-runtime-4.8.97/accountwizard/accountwizard.desktop kdepim-runtime-4.8.97-patched/accountwizard/accountwizard.desktop
+--- kdepim-runtime-4.8.97/accountwizard/accountwizard.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/accountwizard/accountwizard.desktop	2012-07-16 19:48:36.427843191 +1100
+@@ -73,6 +73,7 @@
+ Comment[pt]=Lançar o assistente de contas para configurar as contas PIM.
+ Comment[pt_BR]=Executa o assistente para configuração das contas PIM.
+ Comment[ro]=Lansează expertul de conturi pentru a configura conturi noi.
++Comment[ru]=Запуск мастера учётных записей для настройки учётной записи PIM.
+ Comment[sl]=Zaženite čarovnika za nastavljanje računov.
+ Comment[sr]=Покрените чаробњак да подесите ПИМ налоге.
+ Comment[sr@ijekavian]=Покрените чаробњак да подесите ПИМ налоге.
+diff -urN kdepim-runtime-4.8.97/agents/calendarsearch/calendarsearchagent.desktop kdepim-runtime-4.8.97-patched/agents/calendarsearch/calendarsearchagent.desktop
+--- kdepim-runtime-4.8.97/agents/calendarsearch/calendarsearchagent.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/calendarsearch/calendarsearchagent.desktop	2012-07-16 19:48:36.427843191 +1100
+@@ -27,6 +27,7 @@
+ Name[pt]=Agente de Pesquisa do Calendário
+ Name[pt_BR]=Agente de pesquisa de calendário
+ Name[ro]=Agent de căutare în calendar
++Name[ru]=Агент поиска по календарю
+ Name[sr]=Агент претраге календара
+ Name[sr@ijekavian]=Агент претраге календара
+ Name[sr@ijekavianlatin]=Agent pretrage kalendara
+diff -urN kdepim-runtime-4.8.97/agents/invitations/invitationsagent.desktop kdepim-runtime-4.8.97-patched/agents/invitations/invitationsagent.desktop
+--- kdepim-runtime-4.8.97/agents/invitations/invitationsagent.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/invitations/invitationsagent.desktop	2012-07-16 19:48:36.435843191 +1100
+@@ -24,6 +24,7 @@
+ Name[pl]=Agent wysyłania zaproszeń
+ Name[pt]=Agente de Despacho de Convites
+ Name[pt_BR]=Agente de encaminhamento de convites
++Name[ru]=Агент распределения приглашений
+ Name[sr]=Агент отпремања позивница
+ Name[sr@ijekavian]=Агент отпремања позивница
+ Name[sr@ijekavianlatin]=Agent otpremanja pozivnica
+diff -urN kdepim-runtime-4.8.97/agents/maildispatcher/maildispatcheragent.desktop kdepim-runtime-4.8.97-patched/agents/maildispatcher/maildispatcheragent.desktop
+--- kdepim-runtime-4.8.97/agents/maildispatcher/maildispatcheragent.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/maildispatcher/maildispatcheragent.desktop	2012-07-16 19:48:36.498843191 +1100
+@@ -28,6 +28,7 @@
+ Name[pt]=Agente de Despacho do Correio
+ Name[pt_BR]=Agente de encaminhamento de e-mails
+ Name[ro]=Agent de livrare a mesajelor
++Name[ru]=Агент почтового диспетчера
+ Name[sl]=Posrednik za odpošiljanje pošte
+ Name[sr]=Агент отпремања поште
+ Name[sr@ijekavian]=Агент отпремања поште
+diff -urN kdepim-runtime-4.8.97/agents/nepomukfeeder/akonadinepomukfeederagent.desktop kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/akonadinepomukfeederagent.desktop
+--- kdepim-runtime-4.8.97/agents/nepomukfeeder/akonadinepomukfeederagent.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/akonadinepomukfeederagent.desktop	2012-07-16 19:48:36.557843188 +1100
+@@ -21,6 +21,7 @@
+ Name[pl]=Podajnik Akonadi Nepomuk
+ Name[pt]=Fontes do Nepomuk para o Akonadi
+ Name[pt_BR]=Alimentador do Nepomuk para o Akonadi
++Name[ru]=Фидер Nepomuk для Akonadi
+ Name[sr]=Непомуков уводник Аконадија
+ Name[sr@ijekavian]=Непомуков уводник Аконадија
+ Name[sr@ijekavianlatin]=Nepomukov uvodnik Akonadija
+diff -urN kdepim-runtime-4.8.97/agents/nepomukfeeder/akonadinepomukfeeder.desktop kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/akonadinepomukfeeder.desktop
+--- kdepim-runtime-4.8.97/agents/nepomukfeeder/akonadinepomukfeeder.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/akonadinepomukfeeder.desktop	2012-07-16 19:52:44.156840567 +1100
+@@ -23,6 +23,7 @@
+ Name[pl]=Wtyczka Podajnik Akonadi Nepomuk
+ Name[pt]='Plugin' de Fontes do Nepomuk para o Akonadi
+ Name[pt_BR]=Plugin do alimentador do Nepomuk para o Akonadi
++Name[ru]=Модуль фидера Nepomuk для Akonadi
+ Name[sr]=Аконадијев прикључак Непомуковог уводника
+ Name[sr@ijekavian]=Аконадијев прикључак Непомуковог уводника
+ Name[sr@ijekavianlatin]=Akonadijev priključak Nepomukovog uvodnika
+diff -urN kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomukcalendarfeeder.desktop kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomukcalendarfeeder.desktop
+--- kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomukcalendarfeeder.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomukcalendarfeeder.desktop	2012-07-16 19:48:36.558843188 +1100
+@@ -33,6 +33,7 @@
+ Name[pl]=Podajnik Kalendarza Nepomuk
+ Name[pt]=Alimentação do Calendário para o Nepomuk
+ Name[pt_BR]=Alimentador de calendário para o Nepomuk
++Name[ru]=Фидер календарей Nepomuk
+ Name[sl]=Podajalnik koledarjev za Nepomuk
+ Name[sr]=Непомуков уводник календара
+ Name[sr@ijekavian]=Непомуков уводник календара
+diff -urN kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomukmailfeeder.desktop kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomukmailfeeder.desktop
+--- kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomukmailfeeder.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomukmailfeeder.desktop	2012-07-16 19:48:36.558843188 +1100
+@@ -26,6 +26,7 @@
+ Name[pl]=Podajnik Poczty Nepomuk
+ Name[pt]=Alimentação do Correio para o Nepomuk
+ Name[pt_BR]=Alimentador de e-mails para o Nepomuk
++Name[ru]=Фидер почты Nepomuk
+ Name[sr]=Непомуков уводник е‑поште
+ Name[sr@ijekavian]=Непомуков уводник е‑поште
+ Name[sr@ijekavianlatin]=Nepomukov uvodnik e‑pošte
+diff -urN kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomuknotefeeder.desktop kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomuknotefeeder.desktop
+--- kdepim-runtime-4.8.97/agents/nepomukfeeder/plugins/nepomuknotefeeder.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/nepomukfeeder/plugins/nepomuknotefeeder.desktop	2012-07-16 19:48:36.558843188 +1100
+@@ -26,6 +26,7 @@
+ Name[pl]=Podajnik Notatek Nepomuk
+ Name[pt]=Fontes de Notas do Nepomuk
+ Name[pt_BR]=Alimentador de notas para o Nepomuk
++Name[ru]=Фидер заметок Nepomuk
+ Name[sr]=Непомуков уводник бележака
+ Name[sr@ijekavian]=Непомуков уводник бележака
+ Name[sr@ijekavianlatin]=Nepomukov uvodnik beležaka
+diff -urN kdepim-runtime-4.8.97/agents/newmailnotifier/newmailnotifieragent.desktop kdepim-runtime-4.8.97-patched/agents/newmailnotifier/newmailnotifieragent.desktop
+--- kdepim-runtime-4.8.97/agents/newmailnotifier/newmailnotifieragent.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/agents/newmailnotifier/newmailnotifieragent.desktop	2012-07-16 19:48:36.559843189 +1100
+@@ -27,6 +27,7 @@
+ Name[pt]=Notificação de Correio Novo
+ Name[pt_BR]=Notificação de novo e-mail
+ Name[ro]=Notificator mesaje noi
++Name[ru]=Уведомления о новых электронных сообщениях
+ Name[sr]=Извештавач о пристиглој е‑пошти
+ Name[sr@ijekavian]=Извештавач о пристиглој е‑пошти
+ Name[sr@ijekavianlatin]=Izveštavač o pristigloj e‑pošti
+@@ -64,6 +65,7 @@
+ Comment[pt]=Notificações acerca do correio novo recebido
+ Comment[pt_BR]=Notificações sobre os novos e-mails recebidos
+ Comment[ro]=Notificări despre mesajele noi
++Comment[ru]=Уведомления о недавно полученных электронных сообщениях
+ Comment[sr]=Обавештења о недавно пристиглој е‑пошти
+ Comment[sr@ijekavian]=Обавештења о недавно пристиглој е‑пошти
+ Comment[sr@ijekavianlatin]=Obaveštenja o nedavno pristigloj e‑pošti
+diff -urN kdepim-runtime-4.8.97/migration/kaddressbook/kaddressbookmigrator.desktop kdepim-runtime-4.8.97-patched/migration/kaddressbook/kaddressbookmigrator.desktop
+--- kdepim-runtime-4.8.97/migration/kaddressbook/kaddressbookmigrator.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/migration/kaddressbook/kaddressbookmigrator.desktop	2012-07-16 19:53:15.709840234 +1100
+@@ -31,6 +31,7 @@
+ Name[pl]=kaddressbookmigrator
+ Name[pt]=kaddressbookmigrator
+ Name[pt_BR]=kaddressbookmigrator
++Name[ru]=kaddressbookmigrator
+ Name[sk]=kaddressbookmigrator
+ Name[sl]=kaddressbookmigrator
+ Name[sr]=Мигратор К‑адресара
+@@ -72,6 +73,7 @@
+ Comment[pl]=Narzędzie to migracji starej książki adresowej kresource do Akonadi.
+ Comment[pt]=Uma ferramenta para migrar os livros de endereços antigos com KResources para o Akonadi.
+ Comment[pt_BR]=Ferramenta de migração do livro de endereços antigo baseado no kresource para o Akonadi.
++Comment[ru]=Инструмент миграции старой адресной книги kresource в адресную книгу Akonadi.
+ Comment[sl]=Orodje za selitev starega adresarja, temelječega na KResource, v Akonadi
+ Comment[sr]=Алатка за пресељење старих адресара у Аконади.
+ Comment[sr@ijekavian]=Алатка за пресељење старих адресара у Аконади.
+diff -urN kdepim-runtime-4.8.97/plugins/akonadi_serializer_kalarm.desktop kdepim-runtime-4.8.97-patched/plugins/akonadi_serializer_kalarm.desktop
+--- kdepim-runtime-4.8.97/plugins/akonadi_serializer_kalarm.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/plugins/akonadi_serializer_kalarm.desktop	2012-07-16 19:49:16.109842771 +1100
+@@ -27,6 +27,7 @@
+ Name[pl]=Serializacja zdarzeń KAlarm
+ Name[pt]=Serializador de Eventos do KAlarm
+ Name[pt_BR]=Serializador de eventos do KAlarm
++Name[ru]=Сериализатор событий KAlarm
+ Name[sr]=Серијализатор К‑алармових догађаја
+ Name[sr@ijekavian]=Серијализатор К‑алармових догађаја
+ Name[sr@ijekavianlatin]=Serijalizator K‑alarmovih događaja
+@@ -64,6 +65,7 @@
+ Comment[pl]=Wtyczka Akonadi do serializowania zdarzeń KAlarm
+ Comment[pt]=Um 'plugin' de serialização do Akonadi para os eventos do KAlarm
+ Comment[pt_BR]=Um plugin de serialização do Akonadi para eventos do KAlarm
++Comment[ru]=Модуль сериализатора Akonadi для событий KAlarm
+ Comment[sr]=Аконадијев прикључак серијализатора за К‑алармове догађаје
+ Comment[sr@ijekavian]=Аконадијев прикључак серијализатора за К‑алармове догађаје
+ Comment[sr@ijekavianlatin]=Akonadijev priključak serijalizatora za K‑alarmove događaje
+diff -urN kdepim-runtime-4.8.97/resources/akonotes/akonotesresource.desktop kdepim-runtime-4.8.97-patched/resources/akonotes/akonotesresource.desktop
+--- kdepim-runtime-4.8.97/resources/akonotes/akonotesresource.desktop	2012-06-28 06:39:40.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/akonotes/akonotesresource.desktop	2012-07-16 19:48:36.560843189 +1100
+@@ -67,6 +67,7 @@
+ Comment[pt]=Carrega uma hierarquia de notas de uma pasta Maildir local
+ Comment[pt_BR]=Carrega uma hierarquia de notas de uma pasta maildir local
+ Comment[ro]=Încarcă o ierarhie de notițe dintr-un dosar maildir local
++Comment[ru]=Загрузка иерархии записей для локальной папки maildir
+ Comment[sr]=Учитава хијерархију белешки из локалне мејлдир фасцикле
+ Comment[sr@ijekavian]=Учитава хијерархију биљешки из локалне мејлдир фасцикле
+ Comment[sr@ijekavianlatin]=Učitava hijerarhiju bilješki iz lokalne maildir fascikle
+diff -urN kdepim-runtime-4.8.97/resources/contacts/contactsresource.desktop kdepim-runtime-4.8.97-patched/resources/contacts/contactsresource.desktop
+--- kdepim-runtime-4.8.97/resources/contacts/contactsresource.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/contacts/contactsresource.desktop	2012-07-16 19:48:36.560843189 +1100
+@@ -75,6 +75,7 @@
+ Comment[pt]=O livro de endereços com os contactos pessoais
+ Comment[pt_BR]=O livro de endereços com contatos pessoais
+ Comment[ro]=Cartea de adrese cu contacte personale
++Comment[ru]=Адресная книга с личными контактами
+ Comment[sl]=Adresar z osebnimi stiki
+ Comment[sr]=Адресар са личним контактима
+ Comment[sr@ijekavian]=Адресар са личним контактима
+diff -urN kdepim-runtime-4.8.97/resources/contacts/wizard/contactswizard.desktop kdepim-runtime-4.8.97-patched/resources/contacts/wizard/contactswizard.desktop
+--- kdepim-runtime-4.8.97/resources/contacts/wizard/contactswizard.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/contacts/wizard/contactswizard.desktop	2012-07-16 19:48:36.560843189 +1100
+@@ -75,6 +75,7 @@
+ Comment[pt]=O livro de endereços com os contactos pessoais
+ Comment[pt_BR]=O livro de endereços com contatos pessoais
+ Comment[ro]=Cartea de adrese cu contacte personale
++Comment[ru]=Адресная книга с личными контактами
+ Comment[sl]=Adresar z osebnimi stiki
+ Comment[sr]=Адресар са личним контактима
+ Comment[sr@ijekavian]=Адресар са личним контактима
+diff -urN kdepim-runtime-4.8.97/resources/dav/resource/davgroupwareprovider.desktop kdepim-runtime-4.8.97-patched/resources/dav/resource/davgroupwareprovider.desktop
+--- kdepim-runtime-4.8.97/resources/dav/resource/davgroupwareprovider.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/dav/resource/davgroupwareprovider.desktop	2012-07-16 19:48:36.561843189 +1100
+@@ -24,6 +24,7 @@
+ Name[pl]=Dostawca zasobu Groupware DAV
+ Name[pt]=Fornecedor de recursos de 'groupware' em DAV
+ Name[pt_BR]=Provedor de recursos de groupware em DAV
++Name[ru]=Провайдер ресурсов DAV Groupware
+ Name[sr]=Добављач групверских ДАВ ресурса
+ Name[sr@ijekavian]=Добављач групверских ДАВ ресурса
+ Name[sr@ijekavianlatin]=Dobavljač grupverskih DAV resursa
+diff -urN kdepim-runtime-4.8.97/resources/dav/resource/davgroupwareresource.desktop kdepim-runtime-4.8.97-patched/resources/dav/resource/davgroupwareresource.desktop
+--- kdepim-runtime-4.8.97/resources/dav/resource/davgroupwareresource.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/dav/resource/davgroupwareresource.desktop	2012-07-16 19:48:36.561843189 +1100
+@@ -26,6 +26,7 @@
+ Name[pl]=Zasób groupware DAV
+ Name[pt]=Recurso de 'groupware' em DAV
+ Name[pt_BR]=Recurso de groupware por DAV
++Name[ru]=Ресурс DAV groupware
+ Name[sr]=Групверски ДАВ ресурс
+ Name[sr@ijekavian]=Групверски ДАВ ресурс
+ Name[sr@ijekavianlatin]=Grupverski DAV resurs
+@@ -60,6 +61,7 @@
+ Comment[pl]=Zasób do obsługi kalendarzy i książek adresowych DAV (CalDAV, GroupDAV)
+ Comment[pt]=Um recurso para gerir os calendários e livros de endereços em DAV (CalDAV, GroupDAV)
+ Comment[pt_BR]=Recurso para gerenciar calendários e livros de endereços por DAV (CalDAV, GroupDAV)
++Comment[ru]=Ресурс для управления календарями и адресными книгами DAV (CalDAV, GroupDAV)
+ Comment[sl]=Vir za upravljanje koledarjev in adresarjev DAV (CalDAV, GroupDAV)
+ Comment[sr]=Ресурс за управљање ДАВ календарима и адресарима (калДАВ, групДАВ)
+ Comment[sr@ijekavian]=Ресурс за управљање ДАВ календарима и адресарима (калДАВ, групДАВ)
+diff -urN kdepim-runtime-4.8.97/resources/dav/services/owncloud.desktop kdepim-runtime-4.8.97-patched/resources/dav/services/owncloud.desktop
+--- kdepim-runtime-4.8.97/resources/dav/services/owncloud.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/dav/services/owncloud.desktop	2012-07-16 19:50:01.406842291 +1100
+@@ -21,6 +21,7 @@
+ Name[pl]=własna chmura
+ Name[pt]=ownCloud
+ Name[pt_BR]=ownCloud
++Name[ru]=ownCloud
+ Name[sk]=ownCloud
+ Name[sr]=Оунклауд
+ Name[sr@ijekavian]=Оунклауд
+diff -urN kdepim-runtime-4.8.97/resources/imap/wizard/imapwizard.desktop kdepim-runtime-4.8.97-patched/resources/imap/wizard/imapwizard.desktop
+--- kdepim-runtime-4.8.97/resources/imap/wizard/imapwizard.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/imap/wizard/imapwizard.desktop	2012-07-16 19:50:57.680841696 +1100
+@@ -28,6 +28,7 @@
+ Name[pt]=Servidor Genérico de E-Mail IMAP
+ Name[pt_BR]=Servidor de e-mails IMAP genérico
+ Name[ro]=Server de poștă IMAP generic
++Name[ru]=Типичный почтовый сервер IMAP
+ Name[sl]=Splošni poštni strežnik IMAP
+ Name[sr]=Генерички ИМАП сервер е‑поште
+ Name[sr@ijekavian]=Генерички ИМАП сервер е‑поште
+@@ -71,6 +72,7 @@
+ Comment[pt]=Conta de IMAP
+ Comment[pt_BR]=Conta IMAP
+ Comment[ro]=Cont Imap
++Comment[ru]=Учётная запись IMAP
+ Comment[sk]=Imap účet
+ Comment[sl]=Račun IMAP
+ Comment[sr]=ИМАП налог
+diff -urN kdepim-runtime-4.8.97/resources/kalarm/kalarm/kalarmresource.desktop kdepim-runtime-4.8.97-patched/resources/kalarm/kalarm/kalarmresource.desktop
+--- kdepim-runtime-4.8.97/resources/kalarm/kalarm/kalarmresource.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/kalarm/kalarm/kalarmresource.desktop	2012-07-16 19:48:36.562843189 +1100
+@@ -69,6 +69,7 @@
+ Comment[pl]=Wczytuje dane z pliku kalendarza KAlarm
+ Comment[pt]=Carrega os dados de um ficheiro de calendário do KAlarm
+ Comment[pt_BR]=Carrega os dados de um arquivo de calendário do KAlarm
++Comment[ru]=Загрузка данных из файла календаря KAlarm
+ Comment[sl]=Naloži podatke iz koledarske datoteke KAlarma
+ Comment[sr]=Учитава податке из К‑алармовог календарског фајла
+ Comment[sr@ijekavian]=Учитава податке из К‑алармовог календарског фајла
+diff -urN kdepim-runtime-4.8.97/resources/kalarm/kalarmdir/kalarmdirresource.desktop kdepim-runtime-4.8.97-patched/resources/kalarm/kalarmdir/kalarmdirresource.desktop
+--- kdepim-runtime-4.8.97/resources/kalarm/kalarmdir/kalarmdirresource.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/kalarm/kalarmdir/kalarmdirresource.desktop	2012-07-16 19:50:29.645841992 +1100
+@@ -22,6 +22,7 @@
+ Name[pl]=Katalog KAlarm
+ Name[pt]=Pasta do KAlarm
+ Name[pt_BR]=Pasta do KAlarm
++Name[ru]=Каталог KAlarm
+ Name[sk]=Adresár KAlarm
+ Name[sr]=К‑алармова фасцикла
+ Name[sr@ijekavian]=К‑алармова фасцикла
+@@ -55,6 +56,7 @@
+ Comment[pl]=Wczytuje dane z lokalnego katalogu KAlarm
+ Comment[pt]=Carrega os dados de uma pasta local do KAlarm
+ Comment[pt_BR]=Carrega os dados de uma pasta local do KAlarm
++Comment[ru]=Загрузка данных из локальной папки KAlarm
+ Comment[sr]=Учитава податке из локалне К‑алармове фасцикле
+ Comment[sr@ijekavian]=Учитава податке из локалне К‑алармове фасцикле
+ Comment[sr@ijekavianlatin]=Učitava podatke iz lokalne K‑alarmove fascikle
+diff -urN kdepim-runtime-4.8.97/resources/kolabproxy/kolabproxyresource.desktop kdepim-runtime-4.8.97-patched/resources/kolabproxy/kolabproxyresource.desktop
+--- kdepim-runtime-4.8.97/resources/kolabproxy/kolabproxyresource.desktop	2012-06-28 06:39:40.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/kolabproxy/kolabproxyresource.desktop	2012-07-16 19:48:36.563843189 +1100
+@@ -31,6 +31,7 @@
+ Name[pt]=Servidor de Groupware Kolab
+ Name[pt_BR]=Servidor groupware Kolab
+ Name[ro]=Server Kolab Groupware
++Name[ru]=Сервер Kolab Groupware
+ Name[sl]=Strežnik Kolab za skupinsko delo
+ Name[sr]=Колабов групверски сервер
+ Name[sr@ijekavian]=Колабов групверски сервер
+@@ -70,6 +71,7 @@
+ Comment[pl]=Daje dostęp do folderów groupware Kolaba na serwerze IMAP (konta IMAP trzeba skonfigurować oddzielnie).
+ Comment[pt]=Oferece o acesso às pastas de 'groupware' do Kolab num servidor IMAP (as contas de IMAP têm de ser definidas em separado).
+ Comment[pt_BR]=Fornece acesso as pastas groupware Kolab em um servidor IMAP (as contas IMAP precisam ser definidas separadamente).
++Comment[ru]=Предоставляет доступ к папкам Kolab groupware на сервере IMAP (учётные записи IMAP должны быть установлены отдельно).
+ Comment[sl]=Omogoča dostop do Kolabovih map za skupinsko delo na strežniku IMAP (računi IMAP morajo biti nastavljeni posebej).
+ Comment[sr]=Омогућава приступ Колабовим групверским фасциклама на ИМАП серверу (ИМАП налози се морају одвојено поставити).
+ Comment[sr@ijekavian]=Омогућава приступ Колабовим групверским фасциклама на ИМАП серверу (ИМАП налози се морају одвојено поставити).
+diff -urN kdepim-runtime-4.8.97/resources/kolabproxy/wizard/kolabwizard.desktop kdepim-runtime-4.8.97-patched/resources/kolabproxy/wizard/kolabwizard.desktop
+--- kdepim-runtime-4.8.97/resources/kolabproxy/wizard/kolabwizard.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/kolabproxy/wizard/kolabwizard.desktop	2012-07-16 19:48:36.563843189 +1100
+@@ -31,6 +31,7 @@
+ Name[pt]=Servidor de Groupware Kolab
+ Name[pt_BR]=Servidor groupware Kolab
+ Name[ro]=Server Kolab Groupware
++Name[ru]=Сервер Kolab Groupware
+ Name[sl]=Strežnik Kolab za skupinsko delo
+ Name[sr]=Колабов групверски сервер
+ Name[sr@ijekavian]=Колабов групверски сервер
+@@ -73,6 +74,7 @@
+ Comment[pt]=Servidor de 'Groupware' Kolab
+ Comment[pt_BR]=Servidor groupware Kolab
+ Comment[ro]=Server Kolab Groupware
++Comment[ru]=Сервер Kolab Groupware
+ Comment[sl]=Strežnik Kolab za skupinsko delo
+ Comment[sr]=Колабов групверски сервер
+ Comment[sr@ijekavian]=Колабов групверски сервер
+diff -urN kdepim-runtime-4.8.97/resources/maildir/wizard/maildirwizard.desktop kdepim-runtime-4.8.97-patched/resources/maildir/wizard/maildirwizard.desktop
+--- kdepim-runtime-4.8.97/resources/maildir/wizard/maildirwizard.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/maildir/wizard/maildirwizard.desktop	2012-07-16 19:52:09.490840934 +1100
+@@ -80,6 +80,7 @@
+ Comment[pt]=Conta Maildir
+ Comment[pt_BR]=Conta Maildir
+ Comment[ro]=Cont Maildir
++Comment[ru]=Учётная запись Maildir
+ Comment[sk]=Účet poštového adresára
+ Comment[sl]=Račun maildir
+ Comment[sr]=Мејлдир налог
+diff -urN kdepim-runtime-4.8.97/resources/mailtransport_dummy/mtdummyresource.desktop kdepim-runtime-4.8.97-patched/resources/mailtransport_dummy/mtdummyresource.desktop
+--- kdepim-runtime-4.8.97/resources/mailtransport_dummy/mtdummyresource.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/mailtransport_dummy/mtdummyresource.desktop	2012-07-16 19:48:36.564843189 +1100
+@@ -26,6 +26,7 @@
+ Name[pl]=Prosty zasób metody przekazywania poczty
+ Name[pt]=Recurso de Transporte de Correio para Testes
+ Name[pt_BR]=Recurso de transporte de e-mails para testes
++Name[ru]=Фиктивный ресурс почтового транспорта
+ Name[sl]=Lažen vir MailTransport
+ Name[sr]=Лажни ресурс поштанског транспорта
+ Name[sr@ijekavian]=Лажни ресурс поштанског транспорта
+@@ -64,6 +65,7 @@
+ Comment[pl]=Prosty zasób implementujący interfejs do przekazywania poczty
+ Comment[pt]=Uma interface de transporte de correio que implementa um recurso de testes
+ Comment[pt_BR]=Interface de transporte de e-mails que implementa um recurso de testes
++Comment[ru]=Фиктивный ресурс, реализующий интерфейс почтового транспорта
+ Comment[sl]=Lažen vir t implementacijo vmesnika za prenos pošte
+ Comment[sr]=Лажни ресурс који изводи сучеље мрежног транспорта
+ Comment[sr@ijekavian]=Лажни ресурс који изводи сучеље мрежног транспорта
+diff -urN kdepim-runtime-4.8.97/resources/mbox/wizard/mailboxwizard.desktop kdepim-runtime-4.8.97-patched/resources/mbox/wizard/mailboxwizard.desktop
+--- kdepim-runtime-4.8.97/resources/mbox/wizard/mailboxwizard.desktop	2012-07-11 09:44:24.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/mbox/wizard/mailboxwizard.desktop	2012-07-16 19:51:38.448841263 +1100
+@@ -30,6 +30,7 @@
+ Name[pt]=Caixa de Correio
+ Name[pt_BR]=MailBox
+ Name[ro]=MailBox
++Name[ru]=MailBox
+ Name[sk]=MailBox
+ Name[sl]=MailBox
+ Name[sr]=Мбокс
+@@ -73,6 +74,7 @@
+ Comment[pt]=Conta de Caixa do Correio
+ Comment[pt_BR]=Conta Mailbox
+ Comment[ro]=Cont Mailbox
++Comment[ru]=Учётная запись Mailbox
+ Comment[sk]=Účet mailboxu
+ Comment[sl]=Račun MailBox
+ Comment[sr]=Мбокс налог
+diff -urN kdepim-runtime-4.8.97/resources/mixedmaildir/mixedmaildirresource.desktop kdepim-runtime-4.8.97-patched/resources/mixedmaildir/mixedmaildirresource.desktop
+--- kdepim-runtime-4.8.97/resources/mixedmaildir/mixedmaildirresource.desktop	2012-06-28 06:39:40.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/mixedmaildir/mixedmaildirresource.desktop	2012-07-16 19:48:36.565843189 +1100
+@@ -21,6 +21,7 @@
+ Name[pl]=Katalog Poczty KMail
+ Name[pt]=Pasta de Correio do KMail
+ Name[pt_BR]=Pasta de e-mails do KMail
++Name[ru]=Почтовая папка KMail
+ Name[sr]=К‑поштина поштанска фасцикла
+ Name[sr@ijekavian]=К‑поштина поштанска фасцикла
+ Name[sr@ijekavianlatin]=K‑poština poštanska fascikla
+@@ -53,6 +54,7 @@
+ Comment[pl]=Wczytuje dane z lokalnego katalogu poczty KMail
+ Comment[pt]=Carrega os dados a partir de uma pasta de correio local do KMail
+ Comment[pt_BR]=Carrega os dados de uma pasta de e-mails local do KMail
++Comment[ru]=Загрузка данных из локальной почтовой папки KMail
+ Comment[sr]=Учитава податке из локалне К‑поштине поштанске фасцикле
+ Comment[sr@ijekavian]=Учитава податке из локалне К‑поштине поштанске фасцикле
+ Comment[sr@ijekavianlatin]=Učitava podatke iz lokalne K‑poštine poštanske fascikle
+diff -urN kdepim-runtime-4.8.97/resources/openxchange/openxchangeresource.desktop kdepim-runtime-4.8.97-patched/resources/openxchange/openxchangeresource.desktop
+--- kdepim-runtime-4.8.97/resources/openxchange/openxchangeresource.desktop	2012-06-26 07:32:03.000000000 +1100
++++ kdepim-runtime-4.8.97-patched/resources/openxchange/openxchangeresource.desktop	2012-07-16 19:48:36.565843189 +1100
+@@ -67,6 +67,7 @@
+ Comment[pl]=Zapewnia dostęp do spotkań, zadań i kontaktów serwera groupware Open-Xchange.
+ Comment[pt]=Oferece o acesso aos compromissos, tarefas e contactos guardados num servidor de 'groupware' Open-Xchange.
+ Comment[pt_BR]=Fornece acesso aos compromissos, tarefas e contatos de um servidor groupware Open-Xchange.
++Comment[ru]=Обеспечивает доступ ко встречам, задачам и контактам на сервере совместной работы Open-Xchange.
+ Comment[sl]=Omogoča dostop do sestankov, opravil in stikov, shranjenih na strežniku Open-Xchange za skupinsko delo.
+ Comment[sr]=Омогућава приступ састанцима, пословима и контактима са Опен‑ексчејнџовог групверског сервера
+ Comment[sr@ijekavian]=Омогућава приступ састанцима, пословима и контактима са Опен‑ексчејнџовог групверског сервера

@@ -1,0 +1,11 @@
+diff -urN kdepim-runtime-4.8.1.orig/tray/akonaditray.desktop kdepim-runtime-4.8.1/tray/akonaditray.desktop
+--- kdepim-runtime-4.8.1.orig/tray/akonaditray.desktop	2012-03-13 11:50:03.431890528 +0400
++++ kdepim-runtime-4.8.1/tray/akonaditray.desktop	2012-03-13 11:50:24.527293500 +0400
+@@ -4,6 +4,7 @@
+ Exec=akonaditray
+ Icon=akonadi
+ Name=Akonaditray
++NoDisplay=true
+ Name[ar]=Akonaditray
+ Name[bs]=Akonaditray
+ Name[ca]=Akonaditray
