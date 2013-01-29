@@ -2,13 +2,19 @@
 
 Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version:	4.9.4
+Version:	4.9.98
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPL
 Epoch:		3
 URL:		http://community.kde.org/KDE_PIM
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/kdepim-runtime-%{version}.tar.xz
+%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+%if %is_beta
+%define ftpdir unstable
+%else
+%define ftpdir stable
+%endif
+Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/kdepim-runtime-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch10:	kdepim-runtime-4.8.1-noakonaditray.patch
 BuildRequires:	boost-devel
@@ -117,13 +123,15 @@ Akonadi control center for KDE.
 %{_kde_services}/*
 %{_kde_datadir}/mime/packages/*
 %{_kde_libdir}/kde4/*
-%{_kde_libdir}/libkdepim-runtime-dms-copy.so
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_configdir}/*
 %{_kde_autostart}/kaddressbookmigrator.desktop
 %{_kde_servicetypes}/*.desktop
 %{_kde_datadir}/ontology/kde/aneo.*
 %{_kde_datadir}/dbus-1/interfaces/*
+%{_kde_datadir}/apps/akonadi_nepomuk_feeder
+%{_kde_datadir}/apps/nepomukpimindexerutility
+
 
 #-----------------------------------------------------------------------------
 

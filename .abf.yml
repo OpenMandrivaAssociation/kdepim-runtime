@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   kdepim-runtime-4.9.4.tar.xz: 5d6466761e890b2ee0ce66b274553c10f2827ca0
+sources:
+  kdepim-runtime-4.9.98.tar.xz: 633b38e13c0c9601f8f702489c04349873840e60
