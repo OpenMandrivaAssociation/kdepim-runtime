@@ -2,19 +2,19 @@
 
 Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version:	4.9.98
+Version:	4.10.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPL
 Epoch:		3
 URL:		http://community.kde.org/KDE_PIM
 %define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %is_beta
+%if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%ftpdir/%{version}/src/kdepim-runtime-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepim-runtime-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch10:	kdepim-runtime-4.8.1-noakonaditray.patch
 BuildRequires:	boost-devel
@@ -239,7 +239,6 @@ based on kdepim-runtime.
 
 %build
 rm -fr po
-
 %cmake_kde4
 %make
 
@@ -250,6 +249,10 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.0-1
+- New version 4.10.0
+- Update files
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.9.4-1
 - New version 4.9.4
 
