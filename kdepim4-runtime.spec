@@ -2,7 +2,7 @@
 
 Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version:	4.10.0
+Version:	4.10.1
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPL
@@ -249,6 +249,9 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Sat Mar 09 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.1-1
+- New version 4.10.1
+
 * Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.0-1
 - New version 4.10.0
 - Update files
