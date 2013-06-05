@@ -1,14 +1,14 @@
 %define _disable_ld_no_undefined 1
 
-Name:		kdepim4-runtime
 Summary:	K Desktop Environment
-Version:	4.10.3
+Name:		kdepim4-runtime
+Version:	4.10.4
 Release:	1
+Epoch:		3
 Group:		Graphical desktop/KDE
 License:	GPL
-Epoch:		3
-URL:		http://community.kde.org/KDE_PIM
-%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
+Url:		http://community.kde.org/KDE_PIM
+%define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
@@ -249,6 +249,9 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.4-1
+- New version 4.10.4
+
 * Tue May 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.3-1
 - New version 4.10.3
 
