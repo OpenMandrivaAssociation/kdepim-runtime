@@ -16,7 +16,7 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepim-runtime-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
-Patch10:	kdepim-runtime-4.8.1-noakonaditray.patch
+Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	kdepimlibs4-devel
@@ -39,74 +39,7 @@ Group:		Graphical desktop/KDE
 Summary:	Akonadi control center for KDE
 Provides:	kdepim4-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
-Conflicts:	kdepim4-core < 2:4.5.94
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
-Conflicts:	kde-l10n-ar < 4.6.3-2
-Conflicts:	kde-l10n-bg < 4.6.3-2
-Conflicts:	kde-l10n-bn_IN < 4.3.98-4
-Conflicts:	kde-l10n-ca < 4.6.3-2
-Conflicts:	kde-l10n-cs < 4.6.3-2
-Conflicts:	kde-l10n-csb < 4.4.95-7
-Conflicts:	kde-l10n-da < 4.6.3-2
-Conflicts:	kde-l10n-de < 4.6.3-2
-Conflicts:	kde-l10n-el < 4.6.3-2
-Conflicts:	kde-l10n-en_GB < 4.6.3-2
-Conflicts:	kde-l10n-eo < 4.5.95-6
-Conflicts:	kde-l10n-es < 4.6.3-2
-Conflicts:	kde-l10n-et < 4.6.3-2
-Conflicts:	kde-l10n-eu < 4.6.3-2
-Conflicts:	kde-l10n-fa < 4.2.96-5
-Conflicts:	kde-l10n-fi < 4.6.3-2
-Conflicts:	kde-l10n-fr < 4.6.3-2
-Conflicts:	kde-l10n-fy < 4.5.95-6
-Conflicts:	kde-l10n-ga < 4.6.3-2
-Conflicts:	kde-l10n-gl < 4.6.3-2
-Conflicts:	kde-l10n-gu < 4.6.3-2
-Conflicts:	kde-l10n-he < 4.6.3-2
-Conflicts:	kde-l10n-hi < 4.6.3-2
-Conflicts:	kde-l10n-hne < 4.3.98-4
-Conflicts:	kde-l10n-hr < 4.6.3-2
-Conflicts:	kde-l10n-hu < 4.6.3-2
-Conflicts:	kde-l10n-id < 4.6.3-2
-Conflicts:	kde-l10n-is < 4.6.3-2
-Conflicts:	kde-l10n-it < 4.6.3-2
-Conflicts:	kde-l10n-ja < 4.6.3-2
-Conflicts:	kde-l10n-kk < 4.6.3-2
-Conflicts:	kde-l10n-km < 4.6.3-2
-Conflicts:	kde-l10n-kn < 4.6.3-2
-Conflicts:	kde-l10n-ko < 4.6.3-2
-Conflicts:	kde-l10n-ku < 4.3.2-4
-Conflicts:	kde-l10n-lt < 4.6.3-2
-Conflicts:	kde-l10n-lv < 4.6.3-2
-Conflicts:	kde-l10n-mai < 4.6.3-2
-Conflicts:	kde-l10n-mk < 4.4.95-7
-Conflicts:	kde-l10n-ml < 4.5.95-6
-Conflicts:	kde-l10n-mr < 4.3.98-4
-Conflicts:	kde-l10n-nb < 4.6.3-2
-Conflicts:	kde-l10n-nds < 4.6.3-2
-Conflicts:	kde-l10n-ne < 4.2.96-5
-Conflicts:	kde-l10n-nl < 4.6.3-2
-Conflicts:	kde-l10n-nn < 4.6.3-2
-Conflicts:	kde-l10n-pa < 4.6.3-2
-Conflicts:	kde-l10n-pl < 4.6.3-2
-Conflicts:	kde-l10n-pt < 4.6.3-2
-Conflicts:	kde-l10n-pt_BR < 4.6.3-2
-Conflicts:	kde-l10n-ro < 4.6.3-2
-Conflicts:	kde-l10n-ru < 4.6.3-4
-Conflicts:	kde-l10n-se < 4.2.96-6
-Conflicts:	kde-l10n-si < 4.4.95-7
-Conflicts:	kde-l10n-sk < 4.6.3-2
-Conflicts:	kde-l10n-sl < 4.6.3-2
-Conflicts:	kde-l10n-sr < 4.6.3-2
-Conflicts:	kde-l10n-sv < 4.6.3-2
-Conflicts:	kde-l10n-ta < 4.2.96-5
-Conflicts:	kde-l10n-tg < 4.4.95-7
-Conflicts:	kde-l10n-th < 4.6.3-2
-Conflicts:	kde-l10n-tr < 4.6.3-2
-Conflicts:	kde-l10n-uk < 4.6.3-2
-Conflicts:	kde-l10n-wa < 4.6.3-2
-Conflicts:	kde-l10n-zh_CN < 4.6.3-2
-Conflicts:	kde-l10n-zh_TW < 4.6.3-2
 Requires:	akonadi
 Requires:	mysql-client
 
@@ -213,7 +146,7 @@ KDE 4 library.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	kdepimlibs4-devel >= 4.5.71
+Requires:	kdepimlibs4-devel
 Requires:	%{libakonadi_xml} = %{EVRD}
 Requires:	%{libkdepim_copy} = %{EVRD}
 Requires:	%{libmaildir} = %{EVRD}
@@ -251,6 +184,8 @@ rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 %changelog
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.5-1
 - New version 4.10.5
+- Re-diff noakonaditray patch
+- Cleanup really old Conflicts
 
 * Wed Jun 05 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.4-1
 - New version 4.10.4
