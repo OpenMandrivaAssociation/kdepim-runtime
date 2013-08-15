@@ -50,6 +50,7 @@ Akonadi control center for KDE.
 %files -n akonadi-kde
 %{_kde_bindir}/*
 %{_kde_appsdir}/akonadi
+%{_kde_appsdir}/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
 %{_kde_appsdir}/akonadi_knut_resource
 %{_kde_appsdir}/akonadi_maildispatcher_agent
 %{_kde_appsdir}/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
