@@ -23,6 +23,7 @@ BuildRequires:	kdepimlibs4-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
 BuildRequires:	pkgconfig(akonadi)
+BuildRequires:	pkgconfig(LibKFbAPI)
 BuildRequires:	pkgconfig(libkgapi)
 BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
@@ -184,6 +185,7 @@ rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 %changelog
 * Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.11.0-1
 - New version 4.11.0
+- Add pkgconfig(LibKFbAPI) to BuildRequires
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.5-1
 - New version 4.10.5
