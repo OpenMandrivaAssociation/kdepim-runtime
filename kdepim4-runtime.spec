@@ -52,19 +52,20 @@ Akonadi control center for KDE.
 %{_kde_appsdir}/akonadi
 %{_kde_appsdir}/akonadi_knut_resource
 %{_kde_appsdir}/akonadi_maildispatcher_agent
+%{_kde_appsdir}/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
+%{_kde_appsdir}/nepomukpimindexerutility
+%{_kde_appsdir}/kconf_update/newmailnotifier.upd
 %{_kde_applicationsdir}/*
 %{_kde_datadir}/akonadi
-%{_kde_services}/*
 %{_kde_datadir}/mime/packages/*
 %{_kde_libdir}/kde4/*
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_configdir}/*
 %{_kde_autostart}/kaddressbookmigrator.desktop
+%{_kde_services}/*
 %{_kde_servicetypes}/*.desktop
 %{_kde_datadir}/ontology/kde/aneo.*
 %{_kde_datadir}/dbus-1/interfaces/*
-%{_kde_datadir}/apps/akonadi_nepomuk_feeder
-%{_kde_datadir}/apps/nepomukpimindexerutility
 
 
 #-----------------------------------------------------------------------------
@@ -186,6 +187,7 @@ rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 * Wed Aug 14 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.11.0-1
 - New version 4.11.0
 - Add pkgconfig(LibKFbAPI) to BuildRequires
+- Update files list
 
 * Wed Jul 03 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.10.5-1
 - New version 4.10.5
