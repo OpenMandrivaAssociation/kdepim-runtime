@@ -1,12 +1,12 @@
 %define _disable_ld_no_undefined 1
 
-Summary:	K Desktop Environment
+Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
 Version:	4.12.1
 Release:	1
 Epoch:		3
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPL
 Url:		http://community.kde.org/KDE_PIM
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
@@ -42,7 +42,11 @@ Provides:	kdepim4-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
 Requires:	akonadi
+%if %{mdvver} >= 201400
+Requires:	mariadb-client
+%else
 Requires:	mysql-client
+%endif
 
 %description -n akonadi-kde
 Akonadi control center for KDE.
@@ -51,13 +55,12 @@ Akonadi control center for KDE.
 %{_kde_bindir}/*
 %{_kde_appsdir}/akonadi
 %{_kde_appsdir}/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
-%{_kde_appsdir}/akonadi_knut_resource
 %{_kde_appsdir}/akonadi_maildispatcher_agent
 %{_kde_appsdir}/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
 %{_kde_appsdir}/nepomukpimindexerutility
 %{_kde_appsdir}/kconf_update/newmailnotifier.upd
 %{_kde_applicationsdir}/*
-%{_kde_datadir}/akonadi
+%{_kde_datadir}/akonadi/
 %{_kde_datadir}/mime/packages/*
 %{_kde_libdir}/kde4/*
 %{_kde_iconsdir}/*/*/*/*
@@ -67,22 +70,6 @@ Akonadi control center for KDE.
 %{_kde_servicetypes}/*.desktop
 %{_kde_datadir}/ontology/kde/aneo.*
 %{_kde_datadir}/dbus-1/interfaces/*
-
-
-#-----------------------------------------------------------------------------
-
-%define akonadi_xml_major 4
-%define libakonadi_xml %mklibname akonadi-xml %{akonadi_xml_major}
-
-%package -n %{libakonadi_xml}
-Summary:	KDE 4 library
-Group:		System/Libraries
-
-%description -n %{libakonadi_xml}
-KDE 4 library.
-
-%files -n %{libakonadi_xml}
-%{_kde_libdir}/libakonadi-xml.so.%{akonadi_xml_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -150,11 +137,10 @@ KDE 4 library.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	kdepimlibs4-devel
-Requires:	%{libakonadi_xml} = %{EVRD}
-Requires:	%{libkdepim_copy} = %{EVRD}
-Requires:	%{libmaildir} = %{EVRD}
 Requires:	%{libakonadi_filestore} = %{EVRD}
+Requires:	%{libkdepim_copy} = %{EVRD}
 Requires:	%{libkmindexreader} = %{EVRD}
+Requires:	%{libmaildir} = %{EVRD}
 
 %description devel
 This package contains header files needed if you wish to build applications
@@ -162,7 +148,6 @@ based on kdepim-runtime.
 
 %files devel
 %{_kde_libdir}/libakonadi-filestore.so
-%{_kde_libdir}/libakonadi-xml.so
 %{_kde_libdir}/libkdepim-copy.so
 %{_kde_libdir}/libkmindexreader.so
 %{_kde_libdir}/libmaildir.so
@@ -187,6 +172,8 @@ rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 %changelog
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.12.1-1
 - New version 4.12.1
+- Move some files from akonadi-kde to kdepimlibs4-core
+- Move libakonadi-xml subpackage to kdepimlibs4-core
 
 * Wed Dec 04 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.11.4-1
 - New version 4.11.4
