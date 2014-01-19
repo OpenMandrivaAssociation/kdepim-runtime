@@ -42,7 +42,7 @@ Provides:	kdepim4-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
 Requires:	akonadi
-%if %{mdvver} >= 201400
+%if %{mdvver} >= 201410
 Requires:	mariadb-client
 %else
 Requires:	mysql-client
