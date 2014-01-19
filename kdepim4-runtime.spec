@@ -18,7 +18,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepim-runtime-%{ver
 Source1:	%{name}.rpmlintrc
 Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
-BuildRequires:	kdelibs4-devel
+BuildRequires:	kdelibs4-devel >= %{version}
 BuildRequires:	kdepimlibs4-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
