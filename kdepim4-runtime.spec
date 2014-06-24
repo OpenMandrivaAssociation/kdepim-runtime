@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
-Version:	4.12.4
+Version:	4.13.2
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -57,7 +57,6 @@ Akonadi control center for KDE.
 %{_kde_appsdir}/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
 %{_kde_appsdir}/akonadi_maildispatcher_agent
 %{_kde_appsdir}/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
-%{_kde_appsdir}/nepomukpimindexerutility
 %{_kde_appsdir}/kconf_update/newmailnotifier.upd
 %{_kde_applicationsdir}/*
 %{_kde_datadir}/akonadi/
@@ -68,38 +67,7 @@ Akonadi control center for KDE.
 %{_kde_autostart}/kaddressbookmigrator.desktop
 %{_kde_services}/*
 %{_kde_servicetypes}/*.desktop
-%{_kde_datadir}/ontology/kde/aneo.*
 %{_kde_datadir}/dbus-1/interfaces/*
-
-#-----------------------------------------------------------------------------
-
-%define kdepim_copy_major 4
-%define libkdepim_copy %mklibname kdepim-copy %{kdepim_copy_major}
-
-%package -n %{libkdepim_copy}
-Summary:	KDE 4 library
-Group:		System/Libraries
-
-%description -n %{libkdepim_copy}
-KDE 4 library.
-
-%files -n %{libkdepim_copy}
-%{_kde_libdir}/libkdepim-copy.so.%{kdepim_copy_major}*
-
-#-----------------------------------------------------------------------------
-
-%define maildir_major 4
-%define libmaildir %mklibname maildir %{maildir_major}
-
-%package -n %{libmaildir}
-Summary:	KDE 4 library
-Group:		System/Libraries
-
-%description -n %{libmaildir}
-KDE 4 library.
-
-%files -n %{libmaildir}
-%{_kde_libdir}/libmaildir.so.%{maildir_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -118,6 +86,36 @@ KDE 4 library.
 
 #-----------------------------------------------------------------------------
 
+%define folderarchivesettings_major 4
+%define libfolderarchivesettings %mklibname folderarchivesettings %{folderarchivesettings_major}
+
+%package -n %{libfolderarchivesettings}
+Summary:	KDE 4 library
+Group:		System/Libraries
+
+%description -n %{libfolderarchivesettings}
+KDE 4 library.
+
+%files -n %{libfolderarchivesettings}
+%{_kde_libdir}/libfolderarchivesettings.so.%{folderarchivesettings_major}*
+
+#-----------------------------------------------------------------------------
+
+%define kdepim_copy_major 4
+%define libkdepim_copy %mklibname kdepim-copy %{kdepim_copy_major}
+
+%package -n %{libkdepim_copy}
+Summary:	KDE 4 library
+Group:		System/Libraries
+
+%description -n %{libkdepim_copy}
+KDE 4 library.
+
+%files -n %{libkdepim_copy}
+%{_kde_libdir}/libkdepim-copy.so.%{kdepim_copy_major}*
+
+#-----------------------------------------------------------------------------
+
 %define kmindexreader_major 4
 %define libkmindexreader %mklibname kmindexreader %{kmindexreader_major}
 
@@ -131,6 +129,21 @@ KDE 4 library.
 %files -n %{libkmindexreader}
 %{_kde_libdir}/libkmindexreader.so.%{kmindexreader_major}*
 
+#-----------------------------------------------------------------------------
+
+%define maildir_major 4
+%define libmaildir %mklibname maildir %{maildir_major}
+
+%package -n %{libmaildir}
+Summary:	KDE 4 library
+Group:		System/Libraries
+
+%description -n %{libmaildir}
+KDE 4 library.
+
+%files -n %{libmaildir}
+%{_kde_libdir}/libmaildir.so.%{maildir_major}*
+
 #----------------------------------------------------------------------
 
 %package devel
@@ -138,6 +151,7 @@ Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	kdepimlibs4-devel
 Requires:	%{libakonadi_filestore} = %{EVRD}
+Requires:	%{libfolderarchivesettings} = %{EVRD}
 Requires:	%{libkdepim_copy} = %{EVRD}
 Requires:	%{libkmindexreader} = %{EVRD}
 Requires:	%{libmaildir} = %{EVRD}
@@ -148,6 +162,7 @@ based on kdepim-runtime.
 
 %files devel
 %{_kde_libdir}/libakonadi-filestore.so
+%{_kde_libdir}/libfolderarchivesettings.so
 %{_kde_libdir}/libkdepim-copy.so
 %{_kde_libdir}/libkmindexreader.so
 %{_kde_libdir}/libmaildir.so
@@ -170,6 +185,11 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.13.2-1
+- New version 4.13.2
+- Drop some nepumuk-related files
+- New library libfolderarchivesettings
+
 * Wed Apr 02 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.12.4-1
 - New version 4.12.4
 
