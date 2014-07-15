@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
-Version:	4.13.2
+Version:	4.13.3
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -185,6 +185,9 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.13.3-1
+- New version 4.13.3
+
 * Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.13.2-1
 - New version 4.13.2
 - Drop some nepumuk-related files
