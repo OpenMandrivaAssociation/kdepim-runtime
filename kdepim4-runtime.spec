@@ -3,7 +3,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
 Version:	4.14.1
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -24,7 +24,7 @@ BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(LibKFbAPI)
-BuildRequires:	pkgconfig(libkgapi)
+BuildRequires:	pkgconfig(libkgapi) >= 2.2.0
 BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
@@ -185,6 +185,9 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Tue Sep 30 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.1-2
+- Requires libkgapi at least 2.2.0
+
 * Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.1-1
 - New version 4.14.1
 
