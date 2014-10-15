@@ -2,8 +2,8 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
-Version:	4.14.1
-Release:	2
+Version:	4.14.2
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -185,6 +185,9 @@ rm -fr po
 rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
 
 %changelog
+* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.2-1
+- New version 4.14.2
+
 * Tue Sep 30 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 3:4.14.1-2
 - Requires libkgapi at least 2.2.0
 
