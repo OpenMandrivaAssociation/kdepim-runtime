@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
-Version:	4.13.3
+Version:	4.14.3
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -24,7 +24,7 @@ BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(LibKFbAPI)
-BuildRequires:	pkgconfig(libkgapi)
+BuildRequires:	pkgconfig(libkgapi) >= 2.2.0
 BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
