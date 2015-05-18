@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Summary:	K Desktop Environment Information Management runtime stuff
-Name:		kdepim4-runtime
+Name:		kdepim-runtime
 Version:	4.14.8
 Release:	1
 Epoch:		3
@@ -14,12 +14,12 @@ Url:		http://community.kde.org/KDE_PIM
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepim-runtime-%{version}.tar.xz
+Source0:	http://download.kde.org/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
-BuildRequires:	kdelibs4-devel >= 5:%{version}
-BuildRequires:	kdepimlibs4-devel
+BuildRequires:	kdelibs-devel >= 5:%{version}
+BuildRequires:	kdepimlibs-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
 BuildRequires:	pkgconfig(akonadi)
@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
+%rename			kdepim4-runtime
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
@@ -155,6 +156,7 @@ Requires:	%{libfolderarchivesettings} = %{EVRD}
 Requires:	%{libkdepim_copy} = %{EVRD}
 Requires:	%{libkmindexreader} = %{EVRD}
 Requires:	%{libmaildir} = %{EVRD}
+%rename		kdepim4-runtime-devel
 
 %description devel
 This package contains header files needed if you wish to build applications
