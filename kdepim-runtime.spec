@@ -16,7 +16,7 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
-Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
+Patch10:	kdepim4-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs-devel >= 5:%{version}
 BuildRequires:	kdepimlibs-devel
