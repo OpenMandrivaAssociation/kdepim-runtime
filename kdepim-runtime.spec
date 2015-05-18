@@ -15,7 +15,7 @@ Url:		http://community.kde.org/KDE_PIM
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
-Source1:	%{name}.rpmlintrc
+Source1:	kdepim4-runtime.rpmlintrc
 Patch10:	kdepim4-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs-devel >= 5:%{version}
