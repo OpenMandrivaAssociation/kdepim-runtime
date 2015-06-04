@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	4.14.8
+Version:	4.14.9
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -29,7 +29,7 @@ BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
-%rename			kdepim4-runtime
+%rename		kdepim4-runtime
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
