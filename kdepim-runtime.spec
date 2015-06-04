@@ -15,7 +15,7 @@ Url:		http://community.kde.org/KDE_PIM
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
-Source1:	kdepim4-runtime.rpmlintrc
+Source1:	kdepim-runtime.rpmlintrc
 Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
 BuildRequires:	kdelibs-devel >= 5:%{version}
@@ -39,7 +39,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %package -n akonadi-kde
 Group:		Graphical desktop/KDE
 Summary:	Akonadi control center for KDE
-Provides:	kdepim4-runtime = %{EVRD}
+Provides:	kdepim-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
 Requires:	akonadi
@@ -150,7 +150,7 @@ KDE 4 library.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	kdepimlibs4-devel
+Requires:	kdepimlibs-devel
 Requires:	%{libakonadi_filestore} = %{EVRD}
 Requires:	%{libfolderarchivesettings} = %{EVRD}
 Requires:	%{libkdepim_copy} = %{EVRD}
