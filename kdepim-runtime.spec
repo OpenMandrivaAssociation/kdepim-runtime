@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	4.14.9
+Version:	4.14.10
 Release:	1
 Epoch:		3
 License:	GPLv2+
