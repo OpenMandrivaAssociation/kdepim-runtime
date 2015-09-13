@@ -67,6 +67,7 @@ BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:	shared-mime-info
+BuildRequires:	xsltproc
 %rename		kdepim4-runtime
 
 %define last_kdepim_copy_major 4
