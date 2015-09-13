@@ -203,7 +203,6 @@ Group:		Development/KDE and Qt
 Requires:	kdepimlibs-devel
 Requires:	%{libakonadi_filestore} = %{EVRD}
 Requires:	%{libfolderarchivesettings} = %{EVRD}
-Requires:	%{libkdepim_copy} = %{EVRD}
 Requires:	%{libkmindexreader} = %{EVRD}
 Requires:	%{libmaildir} = %{EVRD}
 %rename		kdepim4-runtime-devel
