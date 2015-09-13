@@ -32,6 +32,7 @@ BuildRequires:	cmake(KF5AlarmCalendar)
 BuildRequires:	cmake(KF5CalendarUtils)
 BuildRequires:	cmake(KF5GAPI)
 BuildRequires:	cmake(Qt5TextToSpeech)
+BuildRequires:	shared-mime-info
 %rename		kdepim4-runtime
 
 %define last_kdepim_copy_major 4
