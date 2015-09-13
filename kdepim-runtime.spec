@@ -49,6 +49,7 @@ BuildRequires:	cmake(KF5IMAP)
 BuildRequires:	cmake(KF5Syndication)
 BuildRequires:	cmake(KF5AkonadiNotes)
 BuildRequires:	cmake(KF5AkonadiSocialUtils)
+BuildRequires:	cmake(KF5KCMUtils)
 
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
