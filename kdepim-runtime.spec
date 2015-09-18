@@ -123,7 +123,6 @@ KDE library.
 
 %files -n %{libakonadi_filestore}
 %{_libdir}/libakonadi-filestore.so.%{akonadi_filestore_major}*
-%{_libdir}/libakonadi-filestore.so.4*
 
 #-----------------------------------------------------------------------------
 
@@ -139,7 +138,6 @@ KDE library.
 
 %files -n %{libakonadi_singlefileresource}
 %{_libdir}/libakonadi-singlefileresource.so.%{akonadi_singlefileresource_major}*
-%{_libdir}/libakonadi-singlefileresource.so.4*
 
 #-----------------------------------------------------------------------------
 
@@ -155,7 +153,6 @@ KDE library.
 
 %files -n %{libfolderarchivesettings}
 %{_libdir}/libfolderarchivesettings.so.%{folderarchivesettings_major}*
-%{_libdir}/libfolderarchivesettings.so.4*
 
 #-----------------------------------------------------------------------------
 
@@ -171,7 +168,6 @@ KDE library for indexing mail
 
 %files -n %{libkmindexreader}
 %{_libdir}/libkmindexreader.so.%{kmindexreader_major}*
-%{_libdir}/libkmindexreader.so.4*
 
 #-----------------------------------------------------------------------------
 
@@ -187,29 +183,6 @@ KDE library.
 
 %files -n %{libmaildir}
 %{_libdir}/libmaildir.so.%{maildir_major}*
-%{_libdir}/libmaildir.so.4*
-
-#----------------------------------------------------------------------
-
-%package devel
-Summary:	Devel stuff for %{name}
-Group:		Development/KDE and Qt
-Requires:	kdepimlibs-devel
-Requires:	%{libakonadi_filestore} = %{EVRD}
-Requires:	%{libfolderarchivesettings} = %{EVRD}
-Requires:	%{libkmindexreader} = %{EVRD}
-Requires:	%{libmaildir} = %{EVRD}
-
-%description devel
-This package contains header files needed if you wish to build applications
-based on kdepim-runtime.
-
-%files devel
-%{_libdir}/libakonadi-filestore.so
-%{_libdir}/libakonadi-singlefileresource.so
-%{_libdir}/libfolderarchivesettings.so
-%{_libdir}/libkmindexreader.so
-%{_libdir}/libmaildir.so
 
 #----------------------------------------------------------------------
 
