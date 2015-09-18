@@ -2,8 +2,8 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	15.08.0
-Release:	3
+Version:	15.08.1
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -68,11 +68,6 @@ BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
-
-%define last_kdepim_copy_major 4
-%define libkdepim_copy %mklibname kdepim-copy %{last_kdepim_copy_major}
-Obsoletes:	%libkdepim_copy
-
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
