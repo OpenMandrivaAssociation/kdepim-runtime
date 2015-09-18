@@ -3,7 +3,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	15.08.0
-Release:	2
+Release:	3
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -68,7 +68,6 @@ BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
-%rename		kdepim4-runtime
 
 %define last_kdepim_copy_major 4
 %define libkdepim_copy %mklibname kdepim-copy %{last_kdepim_copy_major}
@@ -205,7 +204,6 @@ Requires:	%{libakonadi_filestore} = %{EVRD}
 Requires:	%{libfolderarchivesettings} = %{EVRD}
 Requires:	%{libkmindexreader} = %{EVRD}
 Requires:	%{libmaildir} = %{EVRD}
-%rename		kdepim4-runtime-devel
 
 %description devel
 This package contains header files needed if you wish to build applications
