@@ -2,7 +2,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim4-runtime
-Version:	4.14.3
+Version:	4.14.10
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -14,11 +14,11 @@ Url:		http://community.kde.org/KDE_PIM
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/kdepim-runtime-%{version}.tar.xz
+Source0:	http://download.kde.org/%ftpdir/applications/15.04.3/src/kdepim-runtime-%{version}.tar.xz
 Source1:	%{name}.rpmlintrc
 Patch10:	kdepim-runtime-4.10.5-noakonaditray.patch
 BuildRequires:	boost-devel
-BuildRequires:	kdelibs4-devel >= 5:%{version}
+BuildRequires:	kdelibs4-devel >= 5:4.14.3
 BuildRequires:	kdepimlibs4-devel
 BuildRequires:	qt4-qtdbus
 BuildRequires:	akonadi
