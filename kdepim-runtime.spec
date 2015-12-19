@@ -1,4 +1,5 @@
 %define _disable_ld_no_undefined 1
+%define _disable_lto 1
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
@@ -22,8 +23,6 @@ BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KrossUi)
 BuildRequires:	cmake(KF5GAPI)
@@ -80,7 +79,7 @@ Summary:	Akonadi control center for KDE
 Provides:	kdepim-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
-Requires:	akonadi
+Requires:	akonadi >= %{EVRD}
 %if %{mdvver} >= 201400
 Requires:	mariadb-client
 %else
@@ -189,10 +188,10 @@ KDE library.
 %prep
 %setup -q -n kdepim-runtime-%{version}
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-%ninja
+%ninja -C build
 
 %install
 %ninja_install -C build
