@@ -1,5 +1,4 @@
 %define _disable_ld_no_undefined 1
-%define _disable_lto 1
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
@@ -191,7 +190,7 @@ KDE library.
 %cmake_kde5
 
 %build
-%ninja -C build
+%ninja -j1 -C build
 
 %install
 %ninja_install -C build
