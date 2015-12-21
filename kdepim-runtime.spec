@@ -63,7 +63,7 @@ BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(Qt5WebKit)
 BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	cmake(Qt5)
-BuildRequires:	cmake(Qt5TextToSpeech)
+#BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
@@ -163,7 +163,7 @@ Summary:	KDE library for indexing mail
 Group:		System/Libraries
 
 %description -n %{libkmindexreader}
-KDE library for indexing mail
+KDE library for indexing mail.
 
 %files -n %{libkmindexreader}
 %{_libdir}/libkmindexreader.so.%{kmindexreader_major}*
