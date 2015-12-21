@@ -62,7 +62,7 @@ BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(Qt5WebKit)
 BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	cmake(Qt5)
-#BuildRequires:	cmake(Qt5TextToSpeech)
+BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
@@ -187,10 +187,13 @@ KDE library.
 %prep
 %setup -q -n kdepim-runtime-%{version}
 %apply_patches
+# (tpg) build with gcc to fix undefined references error
+export CC=gxx
+export CXX=C++
 %cmake_kde5
 
 %build
-%ninja -j1 -C build
+%ninja -C build
 
 %install
 %ninja_install -C build
