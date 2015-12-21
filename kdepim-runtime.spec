@@ -188,8 +188,8 @@ KDE library.
 %setup -q -n kdepim-runtime-%{version}
 %apply_patches
 # (tpg) build with gcc to fix undefined references error
-export CC=gxx
-export CXX=C++
+export CC=gcc
+export CXX=g++
 %cmake_kde5
 
 %build
