@@ -1,5 +1,3 @@
-%define _disable_ld_no_undefined 1
-
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	15.12.0
@@ -92,12 +90,10 @@ Akonadi control center for KDE.
 %config %{_sysconfdir}/xdg/kdepim-runtime.categories
 %{_bindir}/*
 %{_libdir}/qt5/plugins/akonadi*.so
-%{_libdir}/qt5/plugins/kcm_akonadi*.so
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi.protocol
 %{_datadir}/kservices5/akonadi
-%{_datadir}/kservices5/kcm_akonadi*.desktop
 %{_datadir}/kservicetypes5/davgroupwareprovider.desktop
 %{_datadir}/akonadi/accountwizard
 %{_datadir}/akonadi/agents/*.desktop
@@ -187,9 +183,7 @@ KDE library.
 %prep
 %setup -q -n kdepim-runtime-%{version}
 %apply_patches
-# (tpg) build with gcc to fix undefined references error
-export CC=gcc
-export CXX=g++
+
 %cmake_kde5
 
 %build
