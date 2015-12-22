@@ -76,7 +76,7 @@ Summary:	Akonadi control center for KDE
 Provides:	kdepim-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
-Requires:	akonadi >= %{EVRD}
+Requires:	akonadi >= %{version}
 %if %{mdvver} >= 201400
 Requires:	mariadb-client
 %else
