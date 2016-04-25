@@ -1,7 +1,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	15.12.3
-Release:	2
+Version:	16.04.0
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -48,7 +48,6 @@ BuildRequires:	cmake(KF5AkonadiSocialUtils)
 BuildRequires:	cmake(KF5KCMUtils)
 
 BuildRequires:  cmake(KF5AkonadiCalendar)
-BuildRequires:  cmake(KF5AkonadiServer)
 BuildRequires:  cmake(KF5Mbox)
 
 BuildRequires:	cmake(Qt5Gui)
