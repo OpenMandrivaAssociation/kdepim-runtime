@@ -37,20 +37,17 @@ BuildRequires:	cmake(KF5MailTransport)
 BuildRequires:	cmake(KF5IdentityManagement)
 BuildRequires:	cmake(KF5AkonadiContact)
 BuildRequires:	cmake(KF5Contacts)
-BuildRequires:	cmake(KF5AlarmCalendar)
 BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5CalendarUtils)
 BuildRequires:	cmake(KF5PimTextEdit)
 BuildRequires:	cmake(KF5IMAP)
 BuildRequires:	cmake(KF5Syndication)
 BuildRequires:	cmake(KF5AkonadiNotes)
-BuildRequires:	cmake(KF5AkonadiSocialUtils)
 BuildRequires:	cmake(KF5KCMUtils)
-
 BuildRequires:  cmake(KF5AkonadiCalendar)
 BuildRequires:  cmake(KF5Mbox)
-
 BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Script)
 BuildRequires:	cmake(Qt5Network)
@@ -60,6 +57,8 @@ BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
+BuildRequires:  cmake(Qt5WebEngine))
+BuildRequires:  cmake(Qt5WebEngineWidgets)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
 
@@ -74,7 +73,8 @@ Summary:	Akonadi control center for KDE
 Provides:	kdepim-runtime = %{EVRD}
 Conflicts:	kdepim4-runtime-devel < 2:4.7.97
 Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
-Requires:	akonadi >= %{version}
+Requires:	akonadi >= 4:%{version}
+Requires:	akonadi-contacts >= 3:%{version}
 %if %{mdvver} >= 201400
 Requires:	mariadb-client
 %else
