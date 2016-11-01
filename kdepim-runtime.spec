@@ -57,7 +57,7 @@ BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
-BuildRequires:  cmake(Qt5WebEngine))
+BuildRequires:  cmake(Qt5WebEngine)
 BuildRequires:  cmake(Qt5WebEngineWidgets)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
