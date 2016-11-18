@@ -1,0 +1,11 @@
+--- kdepim-runtime-16.08.3/resources/shared/singlefileresource/singlefileresourcebase.h.omv~	2016-11-18 11:55:57.432175415 +0100
++++ kdepim-runtime-16.08.3/resources/shared/singlefileresource/singlefileresourcebase.h	2016-11-18 11:56:16.073743784 +0100
+@@ -180,6 +180,8 @@ protected Q_SLOTS:
+ private Q_SLOTS:
+     void handleProgress(KJob *, unsigned long);
+     void fileChanged(const QString &fileName);
++
++public Q_SLOTS: // Used by SingleFileResource
+     void slotDownloadJobResult(KJob *);
+     void slotUploadJobResult(KJob *);
+ };

@@ -14,6 +14,7 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
+Patch0:		kdepim-runtime-16.08.3-qt-5.8.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -90,9 +91,12 @@ Akonadi control center for KDE.
 %{_bindir}/*
 %{_libdir}/qt5/plugins/akonadi*.so
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
+%{_libdir}/qt5/plugins/kf5/kio/pop3.so
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi.protocol
 %{_datadir}/kservices5/akonadi
+%{_datadir}/kservices5/pop3.protocol
+%{_datadir}/kservices5/pop3s.protocol
 %{_datadir}/kservicetypes5/davgroupwareprovider.desktop
 %{_datadir}/akonadi/accountwizard
 %{_datadir}/akonadi/agents/*.desktop
@@ -101,6 +105,7 @@ Akonadi control center for KDE.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
+%doc %{_docdir}/HTML/en/kioslave5/pop3
 
 #-----------------------------------------------------------------------------
 
