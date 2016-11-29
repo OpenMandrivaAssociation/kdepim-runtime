@@ -63,18 +63,8 @@ BuildRequires:  cmake(Qt5WebEngine)
 BuildRequires:  cmake(Qt5WebEngineWidgets)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
-
-%description
-Information Management applications for the K Desktop Environment runtime libs.
-
-#-----------------------------------------------------------------------------
-
-%package -n akonadi-kde
-Group:		Graphical desktop/KDE
-Summary:	Akonadi control center for KDE
-Provides:	kdepim-runtime = %{EVRD}
-Conflicts:	kdepim4-runtime-devel < 2:4.7.97
-Conflicts:	%{_lib}kdepim-copy4 < 3:4.9.0
+Provides:	akonadi-kde = 3:%{version}
+Obsoletes:	akonadi-kde < 3:%{version}
 Requires:	akonadi >= 4:%{version}
 Requires:	akonadi-contacts >= 3:%{version}
 %if %{mdvver} >= 201400
@@ -83,10 +73,12 @@ Requires:	mariadb-client
 Requires:	mysql-client
 %endif
 
-%description -n akonadi-kde
-Akonadi control center for KDE.
+%description
+Information Management applications for the K Desktop Environment runtime libs.
 
-%files -n akonadi-kde
+#-----------------------------------------------------------------------------
+
+%files
 %config %{_sysconfdir}/xdg/kdepim-runtime.categories
 %{_bindir}/*
 %{_libdir}/qt5/plugins/akonadi*.so
@@ -185,7 +177,7 @@ KDE library.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q -n kdepim-runtime-%{version}
+%setup -q
 %apply_patches
 
 %cmake_kde5
