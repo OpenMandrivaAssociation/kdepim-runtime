@@ -72,7 +72,7 @@ Requires:	mariadb-client
 %else
 Requires:	mysql-client
 %endif
-Conflicts:	kio-pop3 < 16.04.3-2
+Conflicts:	kio-pop3 < 3:16.04.3-2
 Obsoletes:	kio-pop3 < %{EVRD}
 Provides:	kio-pop3 = %{EVRD}
 
