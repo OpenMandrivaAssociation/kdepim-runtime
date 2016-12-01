@@ -72,6 +72,9 @@ Requires:	mariadb-client
 %else
 Requires:	mysql-client
 %endif
+Conflicts:	kio-pop3 < 16.04.3-2
+Obsoletes:	kio-pop3 < %{EVRD}
+Provides:	kio-pop3 = %{EVRD}
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
