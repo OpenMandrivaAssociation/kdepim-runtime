@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	16.08.3
+Version:	16.12.1
 Release:	1
 Epoch:		3
 License:	GPLv2+
