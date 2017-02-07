@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	16.12.1
+Version:	16.12.2
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -14,7 +14,6 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
-Patch0:		kdepim-runtime-16.08.3-qt-5.8.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -83,6 +82,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 
 %files
 %config %{_sysconfdir}/xdg/kdepim-runtime.categories
+%config %{_sysconfdir}/xdg/kdepim-runtime.renamecategories
 %{_bindir}/*
 %{_libdir}/qt5/plugins/akonadi*.so
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
