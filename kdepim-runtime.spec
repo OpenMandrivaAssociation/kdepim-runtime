@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -14,6 +14,7 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
+Patch0:		kdepim-runtime-17.04.0-compile.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -47,6 +48,7 @@ BuildRequires:	cmake(KF5AkonadiNotes)
 BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:  cmake(KF5AkonadiCalendar)
 BuildRequires:  cmake(KF5Mbox)
+BuildRequires:	cmake(KPimKDAV)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Widgets)
@@ -80,7 +82,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 
 #-----------------------------------------------------------------------------
 
-%files
+%files -f %{name}.lang
 %config %{_sysconfdir}/xdg/kdepim-runtime.categories
 %config %{_sysconfdir}/xdg/kdepim-runtime.renamecategories
 %{_bindir}/*
@@ -101,6 +103,16 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
 %doc %{_docdir}/HTML/en/kioslave5/pop3
+%lang(ca) %doc %{_docdir}/HTML/ca/kioslave5/pop3
+%lang(de) %doc %{_docdir}/HTML/de/kioslave5/pop3
+%lang(es) %doc %{_docdir}/HTML/es/kioslave5/pop3
+%lang(it) %doc %{_docdir}/HTML/it/kioslave5/pop3
+%lang(nl) %doc %{_docdir}/HTML/nl/kioslave5/pop3
+%lang(pt_BR) %doc %{_docdir}/HTML/pt_BR/kioslave5/pop3
+%lang(ru) %doc %{_docdir}/HTML/ru/kioslave5/pop3
+%lang(sr) %doc %{_docdir}/HTML/sr/kioslave5/pop3
+%lang(sv) %doc %{_docdir}/HTML/sv/kioslave5/pop3
+%lang(uk) %doc %{_docdir}/HTML/uk/kioslave5/pop3
 
 #-----------------------------------------------------------------------------
 
@@ -191,5 +203,42 @@ KDE library.
 %install
 %ninja_install -C build
 
-# Remove non packaged files
-#rm -rf %{buildroot}%{_kde_libdir}/libnepomukfeederpluginlib.a
+%find_lang accountwizard_contacts
+%find_lang accountwizard_ical
+%find_lang accountwizard_imap
+%find_lang accountwizard_kolab
+%find_lang accountwizard_mailbox
+%find_lang accountwizard_maildir
+%find_lang accountwizard_pop3
+%find_lang accountwizard_vcard
+%find_lang accountwizard_vcarddir
+%find_lang akonadi-filestore
+%find_lang akonadi_birthdays_resource
+%find_lang akonadi_contacts_resource
+%find_lang akonadi_davgroupware_resource
+%find_lang akonadi_gmail_resource
+%find_lang akonadi_googlecalendar_resource
+%find_lang akonadi_googlecontacts_resource
+%find_lang akonadi_ical_resource
+%find_lang akonadi_icaldir_resource
+%find_lang akonadi_imap_resource
+%find_lang akonadi_invitations_agent
+%find_lang akonadi_kalarm_resource
+%find_lang akonadi_maildir_resource
+%find_lang akonadi_maildispatcher_agent
+%find_lang akonadi_mbox_resource
+%find_lang akonadi_migration_agent
+%find_lang akonadi_mixedmaildir_resource
+%find_lang akonadi_newmailnotifier_agent
+%find_lang akonadi_openxchange_resource
+%find_lang akonadi_pop3_resource
+%find_lang akonadi_serializer_plugins
+%find_lang akonadi_singlefile_resource
+%find_lang akonadi_tomboynotes_resource
+%find_lang akonadi_vcard_resource
+%find_lang akonadi_vcarddir_resource
+%find_lang gid-migrator
+%find_lang libfolderarchivesettings
+%find_lang kio_akonadi
+%find_lang kio_pop3
+cat *.lang >%{name}.lang
