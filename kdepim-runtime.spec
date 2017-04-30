@@ -27,6 +27,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KrossUi)
 BuildRequires:	cmake(KF5GAPI) >= 5.1.0
 BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5ItemModels)
