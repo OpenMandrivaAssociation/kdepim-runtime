@@ -3,3 +3,4 @@
 addFilter("E: non-versioned-file-in-library-package")
 addFilter("E: executable-in-library-package")
 addFilter("E: script-without-shebang")
+addFilter("E: devel-file-in-non-devel-package")
