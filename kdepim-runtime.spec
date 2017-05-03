@@ -14,8 +14,12 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
-#Patch0:		kdepim-runtime-17.04.0-compile.patch
-Patch1:		https://cgit.kde.org/kdepim-runtime.git/patch/?id=c9ae16363e68d6958db0cd835cb0180b340594b5
+Patch0:		kdepim-runtime-17.04.0-compile.patch
+# Patches from upstream git
+Patch1:		fix-migration-to-new-gmail-authentication.patch
+Patch2:		disable-gmail-when-compiled-without-xoauth.patch
+Patch3:		fix-missing-connect-when-restarting-idle.patch
+Patch4:		fix-idle-support-with-gssapi.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
