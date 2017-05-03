@@ -95,7 +95,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_libdir}/qt5/plugins/akonadi*.so
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
 %{_libdir}/qt5/plugins/kf5/kio/pop3.so
-%{_libdir}/sasl2/*.so
+%{_libdir}/sasl2/*.so*
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi.protocol
 %{_datadir}/kservices5/akonadi
