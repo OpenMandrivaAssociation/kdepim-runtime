@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	17.04.0
+Version:	17.04.1
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -15,11 +15,6 @@ Url:		http://community.kde.org/KDE_PIM
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
 Patch0:		kdepim-runtime-17.04.0-compile.patch
-# Patches from upstream git
-Patch1:		fix-migration-to-new-gmail-authentication.patch
-Patch2:		disable-gmail-when-compiled-without-xoauth.patch
-Patch3:		fix-missing-connect-when-restarting-idle.patch
-Patch4:		fix-idle-support-with-gssapi.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -109,17 +104,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
-%doc %{_docdir}/HTML/en/kioslave5/pop3
-%lang(ca) %doc %{_docdir}/HTML/ca/kioslave5/pop3
-%lang(de) %doc %{_docdir}/HTML/de/kioslave5/pop3
-%lang(es) %doc %{_docdir}/HTML/es/kioslave5/pop3
-%lang(it) %doc %{_docdir}/HTML/it/kioslave5/pop3
-%lang(nl) %doc %{_docdir}/HTML/nl/kioslave5/pop3
-%lang(pt_BR) %doc %{_docdir}/HTML/pt_BR/kioslave5/pop3
-%lang(ru) %doc %{_docdir}/HTML/ru/kioslave5/pop3
-%lang(sr) %doc %{_docdir}/HTML/sr/kioslave5/pop3
-%lang(sv) %doc %{_docdir}/HTML/sv/kioslave5/pop3
-%lang(uk) %doc %{_docdir}/HTML/uk/kioslave5/pop3
 
 #-----------------------------------------------------------------------------
 
@@ -248,4 +232,5 @@ KDE library.
 %find_lang libfolderarchivesettings
 %find_lang kio_akonadi
 %find_lang kio_pop3
+%find_lang kioslave5 --with-html
 cat *.lang >%{name}.lang
