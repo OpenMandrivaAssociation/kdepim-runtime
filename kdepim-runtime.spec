@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	17.04.3
+Version:	17.07.90
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -194,43 +194,4 @@ KDE library.
 %install
 %ninja_install -C build
 
-%find_lang accountwizard_contacts
-%find_lang accountwizard_ical
-%find_lang accountwizard_imap
-%find_lang accountwizard_kolab
-%find_lang accountwizard_mailbox
-%find_lang accountwizard_maildir
-%find_lang accountwizard_pop3
-%find_lang accountwizard_vcard
-%find_lang accountwizard_vcarddir
-%find_lang akonadi-filestore
-%find_lang akonadi_birthdays_resource
-%find_lang akonadi_contacts_resource
-%find_lang akonadi_davgroupware_resource
-%find_lang akonadi_gmail_resource
-%find_lang akonadi_googlecalendar_resource
-%find_lang akonadi_googlecontacts_resource
-%find_lang akonadi_ical_resource
-%find_lang akonadi_icaldir_resource
-%find_lang akonadi_imap_resource
-%find_lang akonadi_invitations_agent
-%find_lang akonadi_kalarm_resource
-%find_lang akonadi_maildir_resource
-%find_lang akonadi_maildispatcher_agent
-%find_lang akonadi_mbox_resource
-%find_lang akonadi_migration_agent
-%find_lang akonadi_mixedmaildir_resource
-%find_lang akonadi_newmailnotifier_agent
-%find_lang akonadi_openxchange_resource
-%find_lang akonadi_pop3_resource
-%find_lang akonadi_serializer_plugins
-%find_lang akonadi_singlefile_resource
-%find_lang akonadi_tomboynotes_resource
-%find_lang akonadi_vcard_resource
-%find_lang akonadi_vcarddir_resource
-%find_lang gid-migrator
-%find_lang libfolderarchivesettings
-%find_lang kio_akonadi
-%find_lang kio_pop3
-%find_lang kioslave5 --with-html
-cat *.lang >%{name}.lang
+%find_lang %{name} --all-name --with-html
