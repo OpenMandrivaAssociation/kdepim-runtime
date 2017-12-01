@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	17.08.3
+Version:	17.11.90
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -24,7 +24,7 @@ BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KrossUi)
-BuildRequires:	cmake(KF5GAPI) >= 5.1.0
+BuildRequires:	cmake(KPimGAPI)
 BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5Config)
