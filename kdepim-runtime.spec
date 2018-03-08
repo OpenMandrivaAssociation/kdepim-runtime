@@ -18,7 +18,6 @@ Patch0:		kdepim-runtime-17.04.0-compile.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
-BuildRequires:	pkgconfig(libstreams)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(shared-desktop-ontologies)
