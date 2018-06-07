@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -14,7 +14,6 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
-Patch0:		kdepim-runtime-17.04.0-compile.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -87,7 +86,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %config %{_sysconfdir}/xdg/kdepim-runtime.categories
 %config %{_sysconfdir}/xdg/kdepim-runtime.renamecategories
 %{_bindir}/*
-%{_libdir}/qt5/plugins/akonadi*.so
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
 %{_libdir}/qt5/plugins/kf5/kio/pop3.so
 %{_libdir}/sasl2/libkdexoauth2.so*
@@ -100,7 +98,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/akonadi/accountwizard
 %{_datadir}/akonadi/agents/*.desktop
 %{_datadir}/akonadi/firstrun/*
-%{_datadir}/akonadi/plugins/serializer/*.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
@@ -183,9 +180,7 @@ KDE library.
 #----------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
-
+%autosetup -p1
 %cmake_kde5
 
 %build
