@@ -1,6 +1,10 @@
+# Workaround for compile time bug with clang 7.0-336482
+# ld: ../include/llvm/Support/Casting.h:255: typename cast_retty<X, Y *>::ret_type llvm::cast(Y *) [X = llvm::Function, Y = llvm::Constant]: Assertion `isa<X>(Val) && "cast<Ty>() argument of incompatible type!"' failed.
+%define _disable_lto 1
+
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	 18.04.2
+Version:	18.04.3
 Release:	1
 Epoch:		3
 License:	GPLv2+
