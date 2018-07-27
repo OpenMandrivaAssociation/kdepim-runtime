@@ -4,7 +4,7 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	18.04.3
+Version:	18.07.80
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -92,7 +92,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_bindir}/*
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
 %{_libdir}/qt5/plugins/kf5/kio/pop3.so
-%{_libdir}/sasl2/libkdexoauth2.so*
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi.protocol
 %{_datadir}/kservices5/akonadi
