@@ -4,8 +4,8 @@
 
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	18.12.3
-Release:	2
+Version:	19.04.0
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -104,6 +104,27 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
+%dir %{_libdir}/qt5/plugins/akonadi
+%dir %{_libdir}/qt5/plugins/akonadi/config
+%{_libdir}/qt5/plugins/akonadi/config/akonotesconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/birthdaysconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/contactsconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/facebookconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/icalconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/icaldirconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/kalarmconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/maildirconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/maildispatcherconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/mboxconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/mixedmaildirconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/newmailnotifierconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/notesconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/openxchangeconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/pop3config.so
+%{_libdir}/qt5/plugins/akonadi/config/tomboynotesconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/vcardconfig.so
+%{_libdir}/qt5/plugins/akonadi/config/vcarddirconfig.so
+
 
 #-----------------------------------------------------------------------------
 
