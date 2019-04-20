@@ -1,7 +1,3 @@
-# Workaround for compile time bug with clang 7.0-336482
-# ld: ../include/llvm/Support/Casting.h:255: typename cast_retty<X, Y *>::ret_type llvm::cast(Y *) [X = llvm::Function, Y = llvm::Constant]: Assertion `isa<X>(Val) && "cast<Ty>() argument of incompatible type!"' failed.
-%define _disable_lto 1
-
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	19.04.0
@@ -66,6 +62,7 @@ BuildRequires:	cmake(Qt5TextToSpeech)
 BuildRequires:  cmake(Qt5Test)
 BuildRequires:  cmake(Qt5WebEngine)
 BuildRequires:  cmake(Qt5WebEngineWidgets)
+BuildRequires:	cmake(Qca-qt5)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
 Provides:	akonadi-kde = 3:%{version}
