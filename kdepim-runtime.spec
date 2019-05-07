@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	19.04.0
+Version:	19.04.1
 Release:	1
 Epoch:		3
 License:	GPLv2+
