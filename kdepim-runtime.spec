@@ -1,7 +1,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	19.04.1
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -70,10 +70,14 @@ Provides:	akonadi-kde = 3:%{version}
 Obsoletes:	akonadi-kde < 3:%{version}
 Requires:	akonadi >= 4:%{version}
 Requires:	akonadi-contacts >= 3:%{version}
+%if 0
+# Needed if akonadi is set up to use mariadb
+# instead of sqlite -- but ours uses sqlite for now
 %if %{mdvver} >= 201400
 Requires:	mariadb-client
 %else
 Requires:	mysql-client
+%endif
 %endif
 Conflicts:	kio-pop3 < 3:16.04.3-2
 Obsoletes:	kio-pop3 < %{EVRD}
