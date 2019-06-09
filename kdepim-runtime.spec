@@ -19,7 +19,6 @@ BuildRequires:	sasl-devel
 BuildRequires:	akonadi
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
-BuildRequires:	pkgconfig(shared-desktop-ontologies)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KrossUi)
 BuildRequires:	cmake(KPimGAPI)
