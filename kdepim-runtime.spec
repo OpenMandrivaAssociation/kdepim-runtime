@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	19.04.3
+Version:	19.07.80
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -88,8 +88,8 @@ Information Management applications for the K Desktop Environment runtime libs.
 #-----------------------------------------------------------------------------
 
 %files -f %{name}.lang
-%config %{_sysconfdir}/xdg/kdepim-runtime.categories
-%config %{_sysconfdir}/xdg/kdepim-runtime.renamecategories
+%{_datadir}/qlogging-categories5/kdepim-runtime.categories
+%{_datadir}/qlogging-categories5/kdepim-runtime.renamecategories
 %{_bindir}/*
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
 %{_libdir}/qt5/plugins/kf5/kio/pop3.so
