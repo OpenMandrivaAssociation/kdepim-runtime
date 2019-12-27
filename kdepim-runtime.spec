@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -12,7 +12,7 @@ Url:		http://community.kde.org/KDE_PIM
 %else
 %define ftpdir stable
 %endif
-Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
@@ -214,3 +214,9 @@ KDE library.
 %ninja_install -C build
 
 %find_lang %{name} --all-name --with-html
+
+# FIXME workaround for gdb 8.3.1 freeze
+strip --strip-unneeded %{buildroot}%{_libdir}/qt5/plugins/kf5/kio/{pop3,akonadi}.so \
+	%{buildroot}%{_libdir}/qt5/plugins/akonadi/config/*.so \
+	%{buildroot}%{_libdir}/lib*.so* \
+	%{buildroot}%{_bindir}/*
