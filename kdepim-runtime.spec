@@ -214,9 +214,3 @@ KDE library.
 %ninja_install -C build
 
 %find_lang %{name} --all-name --with-html
-
-# FIXME workaround for gdb 8.3.1 freeze
-strip --strip-unneeded %{buildroot}%{_libdir}/qt5/plugins/kf5/kio/{pop3,akonadi}.so \
-	%{buildroot}%{_libdir}/qt5/plugins/akonadi/config/*.so \
-	%{buildroot}%{_libdir}/lib*.so* \
-	%{buildroot}%{_bindir}/*
