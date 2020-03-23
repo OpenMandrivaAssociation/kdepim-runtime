@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	19.12.3
+Version:	20.03.80
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -14,6 +14,7 @@ Url:		http://community.kde.org/KDE_PIM
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
+Patch0:		kdepim-runtime-qt-5.15.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
@@ -47,7 +48,7 @@ BuildRequires:	cmake(KF5AkonadiNotes)
 BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:  cmake(KF5AkonadiCalendar)
 BuildRequires:  cmake(KF5Mbox)
-BuildRequires:	cmake(KPimKDAV)
+BuildRequires:	cmake(KF5DAV)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Widgets)
