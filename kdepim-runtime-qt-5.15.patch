@@ -1,0 +1,24 @@
+diff -up kdepim-runtime-20.03.90/resources/dav/resource/configdialog.cpp.omv~ kdepim-runtime-20.03.90/resources/dav/resource/configdialog.cpp
+--- kdepim-runtime-20.03.90/resources/dav/resource/configdialog.cpp.omv~	2020-04-10 16:11:46.601207241 +0200
++++ kdepim-runtime-20.03.90/resources/dav/resource/configdialog.cpp	2020-04-10 16:11:51.092268090 +0200
+@@ -81,7 +81,7 @@ ConfigDialog::ConfigDialog(QWidget *pare
+     connect(mUi.configuredUrls->selectionModel(), &QItemSelectionModel::selectionChanged, this, &ConfigDialog::checkConfiguredUrlsButtonsState);
+     connect(mUi.configuredUrls, &QAbstractItemView::doubleClicked, this, &ConfigDialog::onEditButtonClicked);
+ 
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(mUi.syncRangeStartType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConfigDialog::onSyncRangeStartTypeChanged);
+ #else
+     connect(mUi.syncRangeStartType, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &ConfigDialog::onSyncRangeStartTypeChanged);
+diff -up kdepim-runtime-20.03.90/resources/ews/ewsconfigdialog.cpp.omv~ kdepim-runtime-20.03.90/resources/ews/ewsconfigdialog.cpp
+--- kdepim-runtime-20.03.90/resources/ews/ewsconfigdialog.cpp.omv~	2020-04-10 16:14:22.366308978 +0200
++++ kdepim-runtime-20.03.90/resources/ews/ewsconfigdialog.cpp	2020-04-10 16:14:29.016398349 +0200
+@@ -178,7 +178,7 @@ EwsConfigDialog::EwsConfigDialog(EwsReso
+     connect(mUi->authOAuth2RadioButton, &QRadioButton::toggled, this, &EwsConfigDialog::setAutoDiscoveryNeeded);
+     connect(mUi->kcfg_BaseUrl, &KLineEdit::textChanged, this, &EwsConfigDialog::enableTryConnect);
+     connect(mUi->tryConnectButton, &QPushButton::clicked, this, &EwsConfigDialog::tryConnect);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(mUi->userAgentCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &EwsConfigDialog::userAgentChanged);
+ #else
+     connect(mUi->userAgentCombo, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &EwsConfigDialog::userAgentChanged);
