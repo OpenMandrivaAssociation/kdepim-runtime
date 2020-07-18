@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	20.04.3
+Version:	20.07.80
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -48,6 +48,8 @@ BuildRequires:	cmake(KF5KCMUtils)
 BuildRequires:  cmake(KF5AkonadiCalendar)
 BuildRequires:  cmake(KF5Mbox)
 BuildRequires:	cmake(KF5DAV)
+BuildRequires:	cmake(KF5Libkdepim)
+BuildRequires:	cmake(KF5Ldap)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Widgets)
@@ -99,6 +101,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/kservices5/akonadi
 %{_datadir}/kservices5/pop3.protocol
 %{_datadir}/kservices5/pop3s.protocol
+%{_datadir}/kservices5/kcmldap.desktop
 %{_datadir}/kservicetypes5/davgroupwareprovider.desktop
 %{_datadir}/akonadi/accountwizard
 %{_datadir}/akonadi/agents/*.desktop
@@ -106,6 +109,8 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
+
+%{_libdir}/qt5/plugins/kcm_ldap.so
 %dir %{_libdir}/qt5/plugins/akonadi
 %dir %{_libdir}/qt5/plugins/akonadi/config
 %{_libdir}/qt5/plugins/akonadi/config/akonotesconfig.so
