@@ -65,6 +65,7 @@ BuildRequires:  cmake(Qt5WebEngine)
 BuildRequires:  cmake(Qt5WebEngineWidgets)
 BuildRequires:	cmake(Qca-qt5)
 BuildRequires:	cmake(Qt5NetworkAuth)
+BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
 Provides:	akonadi-kde = 3:%{version}
