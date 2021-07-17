@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	21.04.2
+Version:	21.07.80
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -98,10 +98,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_libdir}/qt5/plugins/kf5/kio/pop3.so
 %{_libdir}/qt5/plugins/akonadi/config/kalarmconfig.so
 %{_datadir}/knotifications5/akonadi*
-%{_datadir}/kservices5/akonadi.protocol
 %{_datadir}/kservices5/akonadi
-%{_datadir}/kservices5/pop3.protocol
-%{_datadir}/kservices5/pop3s.protocol
 %{_datadir}/kservices5/kcmldap.desktop
 %{_datadir}/kservicetypes5/davgroupwareprovider.desktop
 %{_datadir}/akonadi/accountwizard
@@ -111,7 +108,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
 
-%{_libdir}/qt5/plugins/kcm_ldap.so
 %dir %{_libdir}/qt5/plugins/akonadi
 %dir %{_libdir}/qt5/plugins/akonadi/config
 %{_libdir}/qt5/plugins/akonadi/config/akonotesconfig.so
@@ -130,7 +126,10 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_libdir}/qt5/plugins/akonadi/config/tomboynotesconfig.so
 %{_libdir}/qt5/plugins/akonadi/config/vcardconfig.so
 %{_libdir}/qt5/plugins/akonadi/config/vcarddirconfig.so
-
+%dir %{_libdir}/qt5/plugins/pim
+%dir %{_libdir}/qt5/plugins/pim/kcms
+%dir %{_libdir}/qt5/plugins/pim/kcms/kaddressbook
+%{_libdir}/qt5/plugins/pim/kcms/kaddressbook/kcm_ldap.so
 
 #-----------------------------------------------------------------------------
 
