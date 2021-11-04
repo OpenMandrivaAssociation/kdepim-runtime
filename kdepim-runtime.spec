@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	21.08.2
+Version:	21.08.3
 Release:	1
 Epoch:		3
 License:	GPLv2+
