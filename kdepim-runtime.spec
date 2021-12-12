@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -95,7 +95,7 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/qlogging-categories5/kdepim-runtime.renamecategories
 %{_bindir}/*
 %{_libdir}/qt5/plugins/kf5/kio/akonadi.so
-%{_libdir}/qt5/plugins/kf5/kio/pop3.so
+#{_libdir}/qt5/plugins/kf5/kio/pop3.so
 %{_libdir}/qt5/plugins/akonadi/config/kalarmconfig.so
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi
