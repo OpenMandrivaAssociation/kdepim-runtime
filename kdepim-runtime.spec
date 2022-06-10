@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	22.04.1
+Version:	22.04.2
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -36,7 +36,6 @@ BuildRequires:	cmake(KF5AkonadiMime)
 BuildRequires:	cmake(KF5MailTransport)
 BuildRequires:	cmake(KF5IdentityManagement)
 BuildRequires:	cmake(KF5AkonadiContact)
-BuildRequires:	cmake(KF5AlarmCalendar)
 BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5CalendarCore)
 BuildRequires:	cmake(KF5CalendarUtils)
