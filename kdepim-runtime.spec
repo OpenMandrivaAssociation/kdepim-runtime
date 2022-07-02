@@ -20,6 +20,7 @@ BuildRequires:	akonadi
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Holidays)
 BuildRequires:	cmake(KF5KrossUi)
 BuildRequires:	cmake(KPimGAPI)
 BuildRequires:	cmake(KF5KDELibs4Support)
