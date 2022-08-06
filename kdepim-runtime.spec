@@ -1,7 +1,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	22.04.2
-Release:	2
+Version:	22.07.90
+Release:	1
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -98,7 +98,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 #{_libdir}/qt5/plugins/kf5/kio/pop3.so
 %{_datadir}/knotifications5/akonadi*
 %{_datadir}/kservices5/akonadi
-%{_datadir}/kservices5/kcmldap.desktop
 %{_datadir}/kservicetypes5/davgroupwareprovider.desktop
 %{_datadir}/akonadi/accountwizard
 %{_datadir}/akonadi/agents/*.desktop
@@ -106,29 +105,11 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
-
-%dir %{_libdir}/qt5/plugins/akonadi
-%dir %{_libdir}/qt5/plugins/akonadi/config
-%{_libdir}/qt5/plugins/akonadi/config/akonotesconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/birthdaysconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/contactsconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/icalconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/icaldirconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/maildirconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/maildispatcherconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/mboxconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/mixedmaildirconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/newmailnotifierconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/notesconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/openxchangeconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/pop3config.so
-%{_libdir}/qt5/plugins/akonadi/config/tomboynotesconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/vcardconfig.so
-%{_libdir}/qt5/plugins/akonadi/config/vcarddirconfig.so
-%dir %{_libdir}/qt5/plugins/pim
-%dir %{_libdir}/qt5/plugins/pim/kcms
-%dir %{_libdir}/qt5/plugins/pim/kcms/kaddressbook
-%{_libdir}/qt5/plugins/pim/kcms/kaddressbook/kcm_ldap.so
+%{_libdir}/qt5/plugins/pim5/akonadi/config/*.so
+%{_libdir}/qt5/plugins/pim5/kcms/kaddressbook/kcm_ldap.so
+%{_datadir}/applications/org.kde.akonadi_davgroupware_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_google_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_imap_resource.desktop
 
 #-----------------------------------------------------------------------------
 
