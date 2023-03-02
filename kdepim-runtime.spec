@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	22.12.2
+Version:	22.12.3
 Release:	1
 Epoch:		3
 License:	GPLv2+
