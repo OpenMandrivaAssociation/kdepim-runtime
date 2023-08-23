@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 Epoch:		3
 License:	GPLv2+
@@ -32,25 +32,25 @@ BuildRequires:	cmake(KF5ItemModels)
 BuildRequires:	cmake(KF5NotifyConfig)
 BuildRequires:	cmake(KF5Kross)
 BuildRequires:	cmake(KF5Codecs)
-BuildRequires:	cmake(KF5Akonadi)
-BuildRequires:	cmake(KF5Mime)
-BuildRequires:	cmake(KF5AkonadiMime)
-BuildRequires:	cmake(KF5MailTransport)
-BuildRequires:	cmake(KF5IdentityManagement)
-BuildRequires:	cmake(KF5AkonadiContact)
+BuildRequires:	cmake(KPim5Akonadi)
+BuildRequires:	cmake(KPim5Mime)
+BuildRequires:	cmake(KPim5AkonadiMime)
+BuildRequires:	cmake(KPim5MailTransport)
+BuildRequires:	cmake(KPim5IdentityManagement)
+BuildRequires:	cmake(KPim5AkonadiContact)
 BuildRequires:	cmake(KF5Contacts)
 BuildRequires:	cmake(KF5CalendarCore)
-BuildRequires:	cmake(KF5CalendarUtils)
+BuildRequires:	cmake(KPim5CalendarUtils)
 BuildRequires:	cmake(KF5PimTextEdit)
-BuildRequires:	cmake(KF5PimCommon)
-BuildRequires:	cmake(KF5IMAP)
-BuildRequires:	cmake(KF5AkonadiNotes)
+BuildRequires:	cmake(KPim5PimCommon)
+BuildRequires:	cmake(KPim5IMAP)
+BuildRequires:	cmake(KPim5AkonadiNotes)
 BuildRequires:	cmake(KF5KCMUtils)
-BuildRequires:  cmake(KF5AkonadiCalendar)
-BuildRequires:  cmake(KF5Mbox)
+BuildRequires:  cmake(KPim5AkonadiCalendar)
+BuildRequires:  cmake(KPim5Mbox)
 BuildRequires:	cmake(KF5DAV)
-BuildRequires:	cmake(KF5Libkdepim)
-BuildRequires:	cmake(KF5Ldap)
+BuildRequires:	cmake(KPim5Libkdepim)
+BuildRequires:	cmake(KPim5Ldap)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5Widgets)
@@ -110,6 +110,12 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/applications/org.kde.akonadi_davgroupware_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_google_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_imap_resource.desktop
+%{_libdir}/qt5/plugins/pim5/mailtransport/mailtransport_akonadiplugin.so
+%{_datadir}/applications/org.kde.akonadi_contacts_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_ews_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_openxchange_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_vcard_resource.desktop
+%{_datadir}/applications/org.kde.akonadi_vcarddir_resource.desktop
 
 #-----------------------------------------------------------------------------
 
