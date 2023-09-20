@@ -1,7 +1,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	23.08.1
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -15,6 +15,9 @@ Url:		http://community.kde.org/KDE_PIM
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Source1:	kdepim-runtime.rpmlintrc
 Patch0:		kdepim-runtime-23.03.90-clang-16.patch
+Patch1:		https://invent.kde.org/pim/kdepim-runtime/-/commit/fb0d78fb3bcfce5bd4ff7f51e4cd1405693e0275.patch
+Patch2:		https://invent.kde.org/pim/kdepim-runtime/-/commit/2fd3604ad6a9594b9dd8b0f1529f4f4589fe831f.patch
+Patch3:		https://invent.kde.org/pim/kdepim-runtime/-/commit/c99afc75a503fff6ca83df2f47a5d5d951579524.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
 BuildRequires:	akonadi
