@@ -12,7 +12,6 @@ Url:		http://community.kde.org/KDE_PIM
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kdepim-runtime-%{version}.tar.xz
-Source1:	kdepim-runtime.rpmlintrc
 Patch0:		kdepim-runtime-23.03.90-clang-16.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
