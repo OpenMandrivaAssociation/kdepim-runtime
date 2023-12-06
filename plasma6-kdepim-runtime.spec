@@ -61,6 +61,7 @@ BuildRequires:	cmake(Qca-qt6)
 BuildRequires:	cmake(Qt6NetworkAuth)
 BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(KF6TextWidgets)
+BuildRequires:	cmake(KF6TextTemplate)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
 Requires:	plasma6-akonadi >= %{version}
