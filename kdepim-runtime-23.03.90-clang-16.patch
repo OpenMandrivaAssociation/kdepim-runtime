@@ -1,0 +1,14 @@
+diff -up kdepim-runtime-23.03.90/resources/ews/ewsclient/ewsxml.h.omv~ kdepim-runtime-23.03.90/resources/ews/ewsclient/ewsxml.h
+--- kdepim-runtime-23.03.90/resources/ews/ewsclient/ewsxml.h.omv~	2023-04-14 19:33:56.254079455 +0200
++++ kdepim-runtime-23.03.90/resources/ews/ewsclient/ewsxml.h	2023-04-14 19:35:40.604963918 +0200
+@@ -23,7 +23,10 @@ public:
+ 
+     typedef QHash<T, QVariant> ValueHash;
+ 
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wenum-constexpr-conversion"
+     static constexpr T Ignore = static_cast<T>(-1);
++#pragma GCC diagnostic pop
+ 
+     struct Item {
+         Item()
