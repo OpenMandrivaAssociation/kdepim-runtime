@@ -1,6 +1,6 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		plasma6-kdepim-runtime
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
