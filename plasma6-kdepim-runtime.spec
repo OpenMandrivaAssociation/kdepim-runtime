@@ -1,7 +1,10 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		plasma6-kdepim-runtime
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://community.kde.org/KDE_PIM
@@ -11,7 +14,11 @@ Url:		http://community.kde.org/KDE_PIM
 %else
 %define ftpdir stable
 %endif
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/kdepim-runtime/-/archive/%{gitbranch}/kdepim-runtime-%{gitbranchd}.tar.bz2#/kdepim-runtime-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kdepim-runtime-%{version}.tar.xz
+%endif
 Patch0:		kdepim-runtime-23.03.90-clang-16.patch
 BuildRequires:	boost-devel
 BuildRequires:	sasl-devel
@@ -99,27 +106,21 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/applications/org.kde.akonadi_vcarddir_resource.desktop
 
 %libpackage akonadi-filestore 6
-%{_libdir}/libakonadi-filestore.so.5*
 
 %libpackage akonadi-singlefileresource 6
-%{_libdir}/libakonadi-singlefileresource.so.5*
 
 %libpackage folderarchivesettings 6
-%{_libdir}/libfolderarchivesettings.so.5*
 
 %libpackage kmindexreader 6
-%{_libdir}/libkmindexreader.so.5*
 
 %libpackage maildir 6
-%{_libdir}/libmaildir.so.5*
 
 %libpackage newmailnotifier 6
-%{_libdir}/libnewmailnotifier.so.5*
 
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kdepim-runtime-%{version}
+%autosetup -p1 -n kdepim-runtime-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
