@@ -7,7 +7,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://community.kde.org/KDE_PIM
+Url:		https://community.kde.org/KDE_PIM
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
