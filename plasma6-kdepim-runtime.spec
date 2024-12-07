@@ -4,7 +4,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		plasma6-kdepim-runtime
 Version:	24.08.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://community.kde.org/KDE_PIM
