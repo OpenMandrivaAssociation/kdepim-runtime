@@ -3,8 +3,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		plasma6-kdepim-runtime
-Version:	24.12.3
-Release:	%{?git:0.%{git}.}3
+Version:	25.04.0
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://community.kde.org/KDE_PIM
@@ -94,8 +94,8 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.*.xml
 %{_datadir}/icons/*/*/*/*.*
 %{_datadir}/mime/packages/kdepim-mime.xml
-%{_libdir}/qt6/plugins/pim6/akonadi/config/*.so
-%{_libdir}/qt6/plugins/pim6/kcms/kaddressbook/kcm_ldap.so
+%{_qtdir}/plugins/pim6/akonadi/config/*.so
+%{_qtdir}/plugins/pim6/kcms/common/kcm_ldap.so
 %{_datadir}/applications/org.kde.akonadi_davgroupware_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_google_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_imap_resource.desktop
