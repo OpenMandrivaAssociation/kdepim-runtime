@@ -2,7 +2,7 @@
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
-Name:		plasma6-kdepim-runtime
+Name:		kdepim-runtime
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
