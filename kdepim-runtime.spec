@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -75,6 +75,9 @@ BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
 Requires:	plasma6-akonadi >= %{version}
 Requires:	plasma6-akonadi-contacts >= %{version}
+%rename plasma6-kdepim-runtime
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Information Management applications for the K Desktop Environment runtime libs.
@@ -117,19 +120,3 @@ Information Management applications for the K Desktop Environment runtime libs.
 %libpackage maildir 6
 
 %libpackage newmailnotifier 6
-
-#----------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kdepim-runtime-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-
-%find_lang %{name} --all-name --with-html
