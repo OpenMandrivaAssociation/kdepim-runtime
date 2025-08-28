@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	25.04.3
+Version:	25.08.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -112,6 +112,8 @@ Information Management applications for the K Desktop Environment runtime libs.
 %libpackage akonadi-filestore 6
 
 %libpackage akonadi-singlefileresource 6
+
+%libpackage akonadi-singlefileresource-widget 6
 
 %libpackage folderarchivesettings 6
 
