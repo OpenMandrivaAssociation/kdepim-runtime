@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
-Version:	26.04.3
+Version:	26.08.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -38,7 +38,7 @@ BuildRequires:	cmake(KF6NotifyConfig)
 BuildRequires:	cmake(KF6Codecs)
 BuildRequires:	cmake(KF6Wallet)
 BuildRequires:	cmake(KPim6Akonadi)
-BuildRequires:	cmake(KPim6Mime)
+BuildRequires:	cmake(KF6Mime)
 BuildRequires:	cmake(KPim6AkonadiMime)
 BuildRequires:	cmake(KPim6MailTransport)
 BuildRequires:	cmake(KPim6IdentityManagementCore)
@@ -76,6 +76,7 @@ Requires:	plasma6-akonadi >= %{version}
 Requires:	plasma6-akonadi-contacts >= %{version}
 %rename plasma6-kdepim-runtime
 BuildSystem:	cmake
+BuildOption:	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
@@ -107,7 +108,6 @@ Information Management applications for the K Desktop Environment runtime libs.
 %{_datadir}/applications/org.kde.akonadi_openxchange_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_vcard_resource.desktop
 %{_datadir}/applications/org.kde.akonadi_vcarddir_resource.desktop
-%{_datadir}/applications/org.kde.akonadi_kolab_resource.desktop
 
 %libpackage akonadi-filestore 6
 
