@@ -4,7 +4,7 @@
 Summary:	K Desktop Environment Information Management runtime stuff
 Name:		kdepim-runtime
 Version:	26.08.0
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 # cmake configs still contain a dead KPim6Mime fallback
 %global __requires_exclude cmake\\(KPim6Mime\\)|cmake\\(kpim6mime\\)
 License:	GPLv2+
@@ -74,7 +74,8 @@ BuildRequires:	cmake(KF6TextWidgets)
 BuildRequires:	cmake(KF6TextTemplate)
 BuildRequires:	shared-mime-info
 BuildRequires:	xsltproc
-BuildRequires:	cmake(Etebase)
+# ABF's cmake provide generator does not pick up EtebaseConfig.cmake
+BuildRequires:	pkgconfig(etebase)
 Requires:	plasma6-akonadi >= %{version}
 Requires:	plasma6-akonadi-contacts >= %{version}
 %rename plasma6-kdepim-runtime
